@@ -6,8 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Amit | Cybersecurity & Developer</title>
-    <meta name="description"
-        content="Amit – Cybersecurity enthusiast and full-stack developer. Linux, Python, Web Security, and CTFs.">
+    <meta name="description" content="Amit – Cybersecurity Enthusiast, Linux User, and Python Developer">
+    <meta name="keywords" content="Cybersecurity, Linux, Ethical Hacking, Python, CTF, Web Security">
+    <meta name="author" content="Amit">
 
     <!-- Styles -->
     <link rel="stylesheet" href="assets/css/main.css">
@@ -48,7 +49,7 @@
     <!-- ================= MAIN ================= -->
     <main id="main-content">
         <!-- HERO -->
-        <section class="hero">
+        <section class="hero" id="home">
             <div class="container fade-in">
 
                 <figure class="profile-wrapper">
@@ -57,12 +58,25 @@
                 </figure>
 
                 <h1 class="hero-title">
-                    Hi, I'm <span>Amit</span>
+                    Hi, I'm <span>Amit</span> 👋
                 </h1>
 
+                <pre
+                    style="color:var(--accent-green); margin-bottom: 1.5rem; background: #020617; padding: 10px; border-radius: 6px; display: inline-block; text-align: left; border: 1px solid var(--border-dark);">
+$ whoami
+amit
+
+$ echo "Cybersecurity Enthusiast"
+</pre>
+
+                <h2
+                    style="font-size: 1.5rem; color: var(--color-accent); margin-bottom: 1rem; font-family: 'Space Mono', monospace;">
+                    Cybersecurity Enthusiast | Linux Power User | Python Developer
+                </h2>
+
                 <p class="hero-subtitle">
-                    Cybersecurity Learner & Linux-Focused Developer<br>
-                    Exploring systems, networks, and secure software through hands-on labs and projects.
+                    I focus on ethical hacking, Linux internals, networking, and hands-on labs.
+                    I enjoy breaking systems to understand how to secure them.
                 </p>
 
                 <!-- Skills -->
@@ -76,14 +90,68 @@
 
                 <!-- CTA -->
                 <div class="hero-actions">
-                    <a href="projects.html" class="btn btn-primary">
+                    <a href="#projects" class="btn btn-primary">
                         View Projects
                     </a>
-                    <a href="resume/Amit_Resume.pdf" class="btn btn-outline" target="_blank" rel="noopener">
-                        Download Resume
+                    <a href="#labs" class="btn btn-secondary">
+                        CTF & Labs
                     </a>
                 </div>
 
+            </div>
+        </section>
+
+        <!-- SKILLS SECTION -->
+        <section id="skills" class="container" style="padding-top: 2rem;">
+            <div class="section-title">
+                <span>Expertise</span>
+                <h2>Skills & Tools</h2>
+            </div>
+
+            <div class="skills-grid"
+                style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem;">
+                <!-- Cybersecurity -->
+                <div class="glass-card">
+                    <h3 style="color: var(--color-accent); font-size: 1.5rem; margin-bottom: 1.5rem;">Cybersecurity</h3>
+                    <ul style="list-style: none; padding: 0;">
+                        <li style="margin-bottom: 0.8rem; display: flex; align-items: center; gap: 0.5rem;">🔹 Linux
+                            Privilege Escalation</li>
+                        <li style="margin-bottom: 0.8rem; display: flex; align-items: center; gap: 0.5rem;">🔹 Web
+                            Vulnerabilities (OWASP Top 10)</li>
+                        <li style="margin-bottom: 0.8rem; display: flex; align-items: center; gap: 0.5rem;">🔹 Network
+                            Scanning & Enumeration</li>
+                        <li style="margin-bottom: 0.8rem; display: flex; align-items: center; gap: 0.5rem;">🔹 CTFs &
+                            Labs</li>
+                    </ul>
+                </div>
+
+                <!-- Tools -->
+                <div class="glass-card">
+                    <h3 style="color: var(--color-accent); font-size: 1.5rem; margin-bottom: 1.5rem;">Tools</h3>
+                    <ul style="list-style: none; padding: 0;">
+                        <li style="margin-bottom: 0.8rem; display: flex; align-items: center; gap: 0.5rem;">🔧 Nmap,
+                            Burp Suite, Metasploit</li>
+                        <li style="margin-bottom: 0.8rem; display: flex; align-items: center; gap: 0.5rem;">🔧 Wireshark
+                        </li>
+                        <li style="margin-bottom: 0.8rem; display: flex; align-items: center; gap: 0.5rem;">🔧 Hydra
+                        </li>
+                        <li style="margin-bottom: 0.8rem; display: flex; align-items: center; gap: 0.5rem;">🔧 Git &
+                            GitHub</li>
+                    </ul>
+                </div>
+
+                <!-- Programming -->
+                <div class="glass-card">
+                    <h3 style="color: var(--color-accent); font-size: 1.5rem; margin-bottom: 1.5rem;">Programming</h3>
+                    <ul style="list-style: none; padding: 0;">
+                        <li style="margin-bottom: 0.8rem; display: flex; align-items: center; gap: 0.5rem;">💻 Python
+                        </li>
+                        <li style="margin-bottom: 0.8rem; display: flex; align-items: center; gap: 0.5rem;">💻 Bash
+                            Scripting</li>
+                        <li style="margin-bottom: 0.8rem; display: flex; align-items: center; gap: 0.5rem;">💻 HTML,
+                            CSS, JavaScript</li>
+                    </ul>
+                </div>
             </div>
         </section>
     </main>
@@ -91,7 +159,7 @@
     <!-- ================= FOOTER ================= -->
     <footer class="site-footer">
         <div class="container">
-            <p>&copy; 2026 Amit. All rights reserved.</p>
+            <p>&copy; 2026 Amit | Cybersecurity & Linux Enthusiast</p>
             <nav aria-label="Social links" class="social-links">
                 <a href="https://github.com/amitpadhan525" target="_blank" rel="noopener" aria-label="GitHub">
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
