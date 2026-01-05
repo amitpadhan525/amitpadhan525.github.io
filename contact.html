@@ -35,30 +35,31 @@
                 <h2>Contact Me</h2>
             </div>
 
-            <div class="glass-card" style="max-width: 600px; margin: 0 auto;">
-                <p style="text-align: center; margin-bottom: 2rem; color: var(--color-text-muted);">
+            <div class="glass-card contact-container">
+                <p class="contact-text">
                     Have a project in mind or want to discuss security? Send me a message!
                 </p>
 
-                <form style="display: flex; flex-direction: column; gap: 1.5rem;">
-                    <div style="display: flex; flex-direction: column; gap: 0.5rem;">
-                        <label for="name" style="font-weight: 500;">Name</label>
-                        <input type="text" id="name" name="name"
-                            style="padding: 1rem; border-radius: var(--radius-sm); border: 1px solid var(--color-border); background: var(--color-bg); color: var(--color-text); font-family: inherit;"
-                            placeholder="Your Name" required>
+                <form action="https://formsubmit.co/amitpadhan525@gmail.com" method="POST" class="contact-form">
+                    <!-- Setup for page redirection after submit (optional but recommended) -->
+                    <input type="hidden" name="_next" value="https://amitpadhan525.github.io/contact.html">
+                    <input type="hidden" name="_subject" value="New Contact Form Submission!">
+                    <input type="hidden" name="_captcha" value="false">
+
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" id="name" name="name" class="form-input" placeholder="Your Name" required>
                     </div>
 
-                    <div style="display: flex; flex-direction: column; gap: 0.5rem;">
-                        <label for="email" style="font-weight: 500;">Email</label>
-                        <input type="email" id="email" name="email"
-                            style="padding: 1rem; border-radius: var(--radius-sm); border: 1px solid var(--color-border); background: var(--color-bg); color: var(--color-text); font-family: inherit;"
-                            placeholder="your@email.com" required>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" class="form-input" placeholder="your@email.com"
+                            required>
                     </div>
 
-                    <div style="display: flex; flex-direction: column; gap: 0.5rem;">
-                        <label for="message" style="font-weight: 500;">Message</label>
-                        <textarea id="message" name="message" rows="5"
-                            style="padding: 1rem; border-radius: var(--radius-sm); border: 1px solid var(--color-border); background: var(--color-bg); color: var(--color-text); font-family: inherit; resize: vertical;"
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" rows="5" class="form-textarea"
                             placeholder="What would you like to say?" required></textarea>
                     </div>
 
@@ -66,14 +67,12 @@
                         Message</button>
                 </form>
 
-                <div
-                    style="margin-top: 3rem; text-align: center; border-top: 1px solid var(--color-border); padding-top: 2rem;">
-                    <h4 style="margin-bottom: 1rem;">Or connect directly:</h4>
-                    <div style="display: flex; justify-content: center; gap: 2rem; flex-wrap: wrap;">
-                        <a href="mailto:contact@amit.com" style="color: var(--color-accent);">contact@amit.com</a>
-                        <a href="#" style="color: var(--color-text);">LinkedIn</a>
-                        <a href="#" style="color: var(--color-text);">Twitter</a>
-                        <a href="#" style="color: var(--color-text);">GitHub</a>
+                <div class="social-connect">
+                    <h4>Or connect directly:</h4>
+                    <div class="connect-links">
+                        <a href="mailto:amitpadhan525@gmail.com" class="email-link">amitpadhan525@gmail.com</a>
+                        <a href="https://linkedin.com/in/amit-padhan" target="_blank" rel="noopener">LinkedIn</a>
+                        <a href="https://github.com/amitpadhan525" target="_blank" rel="noopener">GitHub</a>
                     </div>
                 </div>
             </div>
