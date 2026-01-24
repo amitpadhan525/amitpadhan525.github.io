@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Projects | Amit</title>
+    <title>Projects | Amit Padhan</title>
     <meta name="description" content="My Projects - Web Development and Software Engineering">
     <link rel="stylesheet" href="assets/css/main.css">
     <link rel="stylesheet" href="assets/css/responsive.css">
@@ -38,109 +38,138 @@
             <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 2rem;">
 
                 <!-- Project 1: Web -->
-                <article class="project-card">
-                    <div
-                        style="background: var(--color-surface); height: 180px; border-radius: var(--radius-sm); margin-bottom: 1.5rem; border: 1px solid var(--color-border); display: flex; align-items: center; justify-content: center; overflow: hidden;">
-                        <!-- Placeholder Screenshot -->
-                        <div style="text-align: center; color: var(--color-text-muted);">
-                            <span style="font-size: 2rem;">💻</span><br>Web Project
-                        </div>
-                    </div>
-                    <h3>Portfolio Website</h3>
-                    <p>
-                        A personal portfolio site with glassmorphism design, dark mode, and responsive layout.
-                    </p>
+                <article class="project-card visual reveal">
+                    <figure class="project-image">
+                        <img src="assets/images/projects/portfolio-preview.png" alt="Portfolio Website Preview">
+                    </figure>
+                    <div class="project-content">
+                        <h3>Portfolio Website</h3>
+                        <p>
+                            A personal portfolio site with glassmorphism design, dark mode, and responsive layout.
+                        </p>
 
-                    <div style="margin: 1rem 0; border-top: 1px solid var(--color-border); padding-top: 0.5rem;">
-                        <span
-                            style="font-size: 0.8rem; font-weight: 700; color: var(--color-accent); display: block; margin-bottom: 0.5rem;">Tech
-                            Stack:</span>
-                        <div style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
-                            <span
-                                style="font-size: 0.8rem; background: var(--color-bg); padding: 0.25rem 0.5rem; border-radius: 4px; border: 1px solid var(--color-border);">HTML5</span>
-                            <span
-                                style="font-size: 0.8rem; background: var(--color-bg); padding: 0.25rem 0.5rem; border-radius: 4px; border: 1px solid var(--color-border);">CSS3</span>
-                            <span
-                                style="font-size: 0.8rem; background: var(--color-bg); padding: 0.25rem 0.5rem; border-radius: 4px; border: 1px solid var(--color-border);">JS</span>
+                        <div class="tech-stack">
+                            <span class="tech-label">Tech Stack:</span>
+                            <div class="tech-tags">
+                                <span class="tech-tag">HTML5</span>
+                                <span class="tech-tag">CSS3</span>
+                                <span class="tech-tag">JavaScript</span>
+                            </div>
                         </div>
-                    </div>
 
-                    <div style="display: flex; gap: 1rem; margin-top: 1rem;">
-                        <a href="https://github.com/amitpadhan525" target="_blank" rel="noopener"
-                            style="flex: 1; text-align: center; padding: 0.5rem; border: 1px solid var(--color-text); border-radius: var(--radius-sm); font-size: 0.9rem;">View
-                            Code</a>
-                        <a href="index.html"
-                            style="flex: 1; text-align: center; padding: 0.5rem; background: var(--color-accent); color: var(--color-bg); border-radius: var(--radius-sm); font-size: 0.9rem; font-weight: 600;">Live
-                            Demo</a>
+                        <!-- Hidden Details for Modal -->
+                        <div class="card-details" style="display: none;">
+                            <p>This portfolio website is a showcase of my journey as a developer and security
+                                enthusiast. It features a completely custom design built from scratch without any heavy
+                                frameworks.</p>
+                            <h4 style="margin-top: 1rem; color: var(--color-accent);">Key Features:</h4>
+                            <ul style="list-style: disc; margin-left: 1.5rem; margin-top: 0.5rem;">
+                                <li><strong>Glassmorphism UI:</strong> Modern, translucent card designs with backdrop
+                                    filters.</li>
+                                <li><strong>Dark Mode:</strong> A persistent theme toggle that saves user preference.
+                                </li>
+                                <li><strong>Responsive:</strong> Fully fluid layout adapting to mobile and desktop
+                                    screens.</li>
+                                <li><strong>Animations:</strong> Smooth scroll-reveal effects using Intersection
+                                    Observer.</li>
+                            </ul>
+                        </div>
+
+                        <div class="project-links">
+                            <a href="https://github.com/amitpadhan525/amitpadhan525.github.io" target="_blank"
+                                rel="noopener" class="link-btn link-btn-outline">
+                                View Code
+                            </a>
+                            <a href="index.html" class="link-btn link-btn-fill">
+                                Live Demo
+                            </a>
+                        </div>
                     </div>
                 </article>
 
-                <!-- Project 2: Python Tool -->
-                <article class="project-card">
-                    <div
-                        style="background: var(--color-surface); height: 180px; border-radius: var(--radius-sm); margin-bottom: 1.5rem; border: 1px solid var(--color-border); display: flex; align-items: center; justify-content: center; overflow: hidden;">
-                        <!-- Placeholder Screenshot -->
-                        <div style="text-align: center; color: var(--color-text-muted);">
-                            <span style="font-size: 2rem;">🐍</span><br>Python Tool
-                        </div>
-                    </div>
-                    <h3>Network Scanner</h3>
-                    <p>
-                        A multithreaded network scanner that identifies active hosts and open ports in a subnet.
-                    </p>
+                <!-- Project 2: System Info Script -->
+                <article class="project-card visual reveal reveal-delay-1">
+                    <figure class="project-image">
+                        <img src="assets/images/projects/system-info/system_info.png"
+                            alt="System Info Script Screenshot">
+                    </figure>
+                    <div class="project-content">
+                        <h3>System Info Script</h3>
+                        <p>
+                            A light-weight Bash script that gathers and displays essential system information, hardware
+                            details, and resource usage in a readable format.
+                        </p>
 
-                    <div style="margin: 1rem 0; border-top: 1px solid var(--color-border); padding-top: 0.5rem;">
-                        <span
-                            style="font-size: 0.8rem; font-weight: 700; color: var(--color-accent); display: block; margin-bottom: 0.5rem;">Tech
-                            Stack:</span>
-                        <div style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
-                            <span
-                                style="font-size: 0.8rem; background: var(--color-bg); padding: 0.25rem 0.5rem; border-radius: 4px; border: 1px solid var(--color-border);">Python</span>
-                            <span
-                                style="font-size: 0.8rem; background: var(--color-bg); padding: 0.25rem 0.5rem; border-radius: 4px; border: 1px solid var(--color-border);">Socket</span>
-                            <span
-                                style="font-size: 0.8rem; background: var(--color-bg); padding: 0.25rem 0.5rem; border-radius: 4px; border: 1px solid var(--color-border);">Threading</span>
+                        <div class="tech-stack">
+                            <span class="tech-label">Tech Stack:</span>
+                            <div class="tech-tags">
+                                <span class="tech-tag">Bash</span>
+                                <span class="tech-tag">Linux</span>
+                                <span class="tech-tag">CLI</span>
+                            </div>
                         </div>
-                    </div>
 
-                    <div style="display: flex; gap: 1rem; margin-top: 1rem;">
-                        <a href="https://github.com/amitpadhan525" target="_blank" rel="noopener"
-                            style="flex: 1; text-align: center; padding: 0.5rem; border: 1px solid var(--color-text); border-radius: var(--radius-sm); font-size: 0.9rem;">GitHub</a>
+                        <!-- Hidden Details for Modal -->
+                        <div class="card-details" style="display: none;">
+                            <p>This project is a collection of Linux Bash scripts designed for system administration and
+                                monitoring. It focuses on providing quick diagnostics for system hardware and software
+                                details, with options for both plain text and colorful ANSI output.</p>
+
+                            <h4 style="margin-top: 1rem; color: var(--color-accent);">Included Scripts:</h4>
+                            <ul style="list-style: disc; margin-left: 1.5rem; margin-top: 0.5rem;">
+                                <li><strong>system_info_colorfull.sh:</strong> Comprehensive dashboard with OS
+                                    detection, Kernel, Uptime, CPU, RAM, GPU, and Network Status (Colorful output).</li>
+                                <li><strong>system_info.sh:</strong> The standard plain-text version suitable for
+                                    logging or simple terminal viewing.</li>
+                                <li><strong>CPU_info_colorfull.sh:</strong> specialized script for detailed CPU analysis
+                                    and specifications.</li>
+                            </ul>
+
+                            <h4 style="margin-top: 1rem; color: var(--color-accent);">Key Features:</h4>
+                            <ul style="list-style: disc; margin-left: 1.5rem; margin-top: 0.5rem;">
+                                <li><strong>System Dashboard:</strong> Real-time overview of core system metrics.</li>
+                                <li><strong>Hardware Analysis:</strong> Detailed breakdown of CPU and Memory
+                                    specifications.</li>
+                                <li><strong>Flexible Output:</strong> Choose between visual-friendly colorful output or
+                                    log-friendly plain text.</li>
+                            </ul>
+
+                            <p style="margin-top: 1rem;">
+                                <code
+                                    style="background: #333; padding: 0.2rem 0.5rem; border-radius: 4px; color: #10b981;">./system_info_colorfull.sh</code>
+                            </p>
+
+                            <h4 style="margin-top: 1.5rem; color: var(--color-accent); margin-bottom: 0.5rem;">
+                                Screenshots:</h4>
+                            <div style="display: grid; grid-template-columns: 1fr; gap: 1rem;">
+                                <div>
+                                    <p
+                                        style="font-size: 0.8rem; color: var(--color-text-muted); margin-bottom: 0.3rem;">
+                                        System Info Dashboard</p>
+                                    <img src="assets/images/projects/system-info/system_info.png"
+                                        alt="System Info Output"
+                                        style="width: 100%; border-radius: var(--radius-sm); border: 1px solid var(--color-border);">
+                                </div>
+                                <div>
+                                    <p
+                                        style="font-size: 0.8rem; color: var(--color-text-muted); margin-bottom: 0.3rem;">
+                                        CPU Analysis</p>
+                                    <img src="assets/images/projects/system-info/cpu_info.png" alt="CPU Info Output"
+                                        style="width: 100%; border-radius: var(--radius-sm); border: 1px solid var(--color-border);">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="project-links">
+                            <a href="https://github.com/amitpadhan525/linux-bash-scripts/tree/main/system-info"
+                                target="_blank" rel="noopener" class="link-btn link-btn-outline">
+                                View Code
+                            </a>
+                        </div>
                     </div>
                 </article>
 
-                <!-- Project 3: Linux Script -->
-                <article class="project-card">
-                    <div
-                        style="background: var(--color-surface); height: 180px; border-radius: var(--radius-sm); margin-bottom: 1.5rem; border: 1px solid var(--color-border); display: flex; align-items: center; justify-content: center; overflow: hidden;">
-                        <!-- Placeholder Screenshot -->
-                        <div style="text-align: center; color: var(--color-text-muted);">
-                            <span style="font-size: 2rem;">🐧</span><br>Linux Script
-                        </div>
-                    </div>
-                    <h3>Auto-Setup Script</h3>
-                    <p>
-                        Bash script to automate the installation of essential development and security tools on a new
-                        VPS.
-                    </p>
 
-                    <div style="margin: 1rem 0; border-top: 1px solid var(--color-border); padding-top: 0.5rem;">
-                        <span
-                            style="font-size: 0.8rem; font-weight: 700; color: var(--color-accent); display: block; margin-bottom: 0.5rem;">Tech
-                            Stack:</span>
-                        <div style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
-                            <span
-                                style="font-size: 0.8rem; background: var(--color-bg); padding: 0.25rem 0.5rem; border-radius: 4px; border: 1px solid var(--color-border);">Bash</span>
-                            <span
-                                style="font-size: 0.8rem; background: var(--color-bg); padding: 0.25rem 0.5rem; border-radius: 4px; border: 1px solid var(--color-border);">Shell</span>
-                        </div>
-                    </div>
-
-                    <div style="display: flex; gap: 1rem; margin-top: 1rem;">
-                        <a href="https://github.com/amitpadhan525" target="_blank" rel="noopener"
-                            style="flex: 1; text-align: center; padding: 0.5rem; border: 1px solid var(--color-text); border-radius: var(--radius-sm); font-size: 0.9rem;">GitHub</a>
-                    </div>
-                </article>
 
             </div>
         </section>
@@ -148,7 +177,7 @@
 
     <footer class="site-footer">
         <div class="container">
-            <p>&copy; 2026 Amit. All rights reserved.</p>
+            <p>&copy; 2026 Amit Padhan. All rights reserved.</p>
             <nav aria-label="Social links" class="social-links">
                 <a href="https://github.com/amitpadhan525" target="_blank" rel="noopener" aria-label="GitHub">
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
@@ -174,6 +203,20 @@
             </nav>
         </div>
     </footer>
+
+    <div id="project-modal" class="modal-overlay">
+        <div class="modal-content glass">
+            <button class="modal-close" aria-label="Close modal">&times;</button>
+            <div class="modal-header">
+                <h3 class="modal-title">Project Details</h3>
+            </div>
+            <div class="modal-body">
+                <div class="modal-body-content">
+                    <!-- Content will be injected via JS -->
+                </div>
+            </div>
+        </div>
+    </div>
 
     <script src="assets/js/theme.js"></script>
     <script src="assets/js/main.js"></script>
