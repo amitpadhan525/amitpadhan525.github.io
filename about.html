@@ -5,17 +5,30 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About Me | Amit Padhan</title>
-    <meta name="description" content="Learn more about Amit - Cybersecurity Specialist and Web Developer">
+    <meta name="description"
+        content="Learn more about Amit Padhan – Cybersecurity Specialist, Linux enthusiast, and developer on a journey to master offensive and defensive security.">
+    <link rel="icon"
+        href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💻</text></svg>">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;700&display=swap">
     <link rel="stylesheet" href="assets/css/main.css">
     <link rel="stylesheet" href="assets/css/responsive.css">
 </head>
 
 <body>
+
+
+
+
+    <div id="scroll-progress"></div>
+
     <header>
         <div class="glass">
             <a href="index.html" class="logo">&lt;Amit /&gt;</a>
-            <button class="mobile-menu-btn" aria-label="Toggle navigation">☰</button>
-            <nav>
+            <button class="mobile-menu-btn" aria-label="Toggle navigation" aria-expanded="false">☰</button>
+            <nav class="site-nav" aria-label="Primary navigation">
                 <ul class="nav-links">
                     <li><a href="index.html">Home</a></li>
                     <li><a href="about.html" class="active">About</a></li>
@@ -32,132 +45,278 @@
         <section class="container fade-in">
             <div class="section-title">
                 <span>Who I Am</span>
-                <h2>About Me</h2>
+                <h1>About Me</h1>
             </div>
 
-            <div class="glass-card"
-                style="max-width: 900px; margin: 0 auto; display: flex; flex-direction: column; gap: 3rem;">
-
-                <!-- Journey Section -->
+            <div class="glass-card about-card reveal">
+                <!-- About Me -->
                 <div>
-                    <h3>My Journey</h3>
-                    <p style="color: var(--color-text-muted); margin-top: 1rem;">
-                        My journey began with general programming during my B.Tech studies, where I developed a strong
-                        interest in system internals and problem-solving. Over time, this curiosity naturally shifted
-                        toward cybersecurity, especially secure coding, web vulnerabilities, and network behavior.
+                    <h3>About Me</h3>
+                    <p class="about-text">
+                        Hi, I’m <strong>Amit</strong>, a B.Tech student with a strong focus on Cybersecurity, Linux
+                        systems, and backend development. I am deeply interested in understanding how systems work at
+                        the core level — from operating systems and networking to security layers and vulnerability
+                        analysis.
                     </p>
-                    <p style="color: var(--color-text-muted); margin-top: 1rem;">
-                        Today, I focus on strengthening my fundamentals in Linux, networking, and Python, while
-                        practicing security concepts through hands-on labs, CTF challenges, and personal projects. I aim
-                        to grow into a security-focused engineer with a solid understanding of both development and
-                        defense.
+                    <p class="about-text">
+                        I don’t just study concepts — I implement them, test them, and build projects around them.
                     </p>
-                </div>
-
-                <!-- Skills Section -->
-                <div>
-                    <h3 style="margin-bottom: 1.5rem;">Skills & Tools</h3>
-                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 2rem;">
-
-                        <!-- Programming -->
-                        <div>
-                            <h4
-                                style="color: var(--color-accent); font-size: 1.1rem; border-bottom: 1px solid var(--color-border); padding-bottom: 0.5rem; margin-bottom: 1rem;">
-                                Programming & Scripting</h4>
-                            <ul style="color: var(--color-text-muted); line-height: 1.8;">
-                                <li>Python (Automation)</li>
-                                <li>Bash Shell Scripting</li>
-                                <li>C++ (Problem Solving)</li>
-                                <li>HTML/CSS (Web Internals)</li>
-                            </ul>
-                        </div>
-
-                        <!-- Security Tools -->
-                        <div>
-                            <h4
-                                style="color: var(--color-accent); font-size: 1.1rem; border-bottom: 1px solid var(--color-border); padding-bottom: 0.5rem; margin-bottom: 1rem;">
-                                Security Tools & Practices</h4>
-                            <ul style="color: var(--color-text-muted); line-height: 1.8;">
-                                <li>Burp Suite (Web Security)</li>
-                                <li>Wireshark (Network Analysis)</li>
-                                <li>Nmap (Scanning)</li>
-                                <li>Metasploit (Basic Exploitation)</li>
-                            </ul>
-                        </div>
-
-                        <!-- OS & Platforms -->
-                        <div>
-                            <h4
-                                style="color: var(--color-accent); font-size: 1.1rem; border-bottom: 1px solid var(--color-border); padding-bottom: 0.5rem; margin-bottom: 1rem;">
-                                OS & Platforms</h4>
-                            <ul style="color: var(--color-text-muted); line-height: 1.8;">
-                                <li>Arch Linux + Hyprland (Primary)</li>
-                                <li>Kali Linux / Parrot OS</li>
-                                <li>Windows (Rarely)</li>
-                                <li>Git & GitHub</li>
-                            </ul>
-                        </div>
-
-                    </div>
-                </div>
-
-                <!-- Focus & Career -->
-                <div>
-                    <h3 style="margin-bottom: 1.5rem;">Focus & Career</h3>
-                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem;">
-
-                        <!-- Current Focus -->
-                        <div>
-                            <h4
-                                style="color: var(--color-accent); font-size: 1.1rem; border-bottom: 1px solid var(--color-border); padding-bottom: 0.5rem; margin-bottom: 1rem;">
-                                Current Focus</h4>
-                            <ul style="color: var(--color-text-muted); line-height: 1.8;">
-                                <li>Strengthening Linux & Networking</li>
-                                <li>Web & Network Security</li>
-                                <li>Python & Bash Automation</li>
-                                <li>CTFs & Hands-on Labs</li>
-                            </ul>
-                        </div>
-
-                        <!-- Career Direction -->
-                        <div>
-                            <h4
-                                style="color: var(--color-accent); font-size: 1.1rem; border-bottom: 1px solid var(--color-border); padding-bottom: 0.5rem; margin-bottom: 1rem;">
-                                Career Direction</h4>
-                            <ul style="color: var(--color-text-muted); line-height: 1.8;">
-                                <li>Offensive & Defensive Security</li>
-                                <li>Secure System Design</li>
-                                <li>Vulnerability Analysis</li>
-                                <li>Continuous Learning</li>
-                            </ul>
-                        </div>
-
-                    </div>
                 </div>
 
                 <!-- Education -->
-                <div>
+                <div style="margin-top: 3rem;">
                     <h3>Education</h3>
-                    <div style="margin-top: 1rem; border-left: 2px solid var(--color-accent); padding-left: 1.5rem;">
-                        <h4 style="font-size: 1.2rem;">Bachelor of Technology (B.Tech)</h4>
-                        <p style="color: var(--color-text-muted); margin-bottom: 0.5rem;">Computer Science & Engineering
-                        </p>
-                        <p style="color: var(--color-text-muted); margin-bottom: 0.5rem; font-size: 0.95rem;">
-                            Currently pursuing 4th Semester
-                        </p>
-                        <span style="font-family: 'Space Mono', monospace; font-size: 0.9rem; opacity: 0.8;">2024 -
-                            2028 (Expected)</span>
+                    <div class="education-timeline">
+                        <div class="timeline-entry">
+                            <div class="timeline-dot"></div>
+                            <div class="timeline-content">
+                                <h4 class="education-degree">🎓 Bachelor of Technology (B.Tech)</h4>
+                                <p class="education-meta">Currently pursuing my degree while specializing my
+                                    self-learning in:</p>
+                                <ul class="about-list" style="margin-top: 0.5rem; margin-bottom: 1rem;">
+                                    <li>Cybersecurity Fundamentals</li>
+                                    <li>Network Architecture & Protocols</li>
+                                    <li>Cloud Computing Basics</li>
+                                    <li>Linux System Administration</li>
+                                    <li>Web Technologies & Backend Development</li>
+                                </ul>
+                                <p class="education-meta">Alongside academic studies, I dedicate daily time to practical
+                                    cybersecurity labs and system-level experimentation.</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
-                <!-- Resume Download -->
-                <div style="text-align: center; margin-top: 1rem;">
-                    <a href="resume/Amit_Resume.pdf" target="_blank" class="btn btn-primary"
-                        style="padding: 1rem 2rem;">
+                <!-- Certifications -->
+                <div style="margin-top: 3rem;">
+                    <h3>Certifications & Structured Learning</h3>
+                    <p class="about-text">I have completed structured cybersecurity and computing fundamentals training
+                        through:</p>
+
+                    <div class="cert-grid" style="margin-top: 1.5rem; margin-bottom: 1.5rem;">
+                        <div class="cert-card">
+                            <div class="cert-header">
+                                <h4>Pre Security Path</h4>
+                                <span class="cert-badge cert-done">Completed</span>
+                            </div>
+                            <p class="cert-issuer">TryHackMe</p>
+                            <ul class="about-list" style="margin-top: 0.5rem; font-size: 0.85rem;">
+                                <li>Computer Fundamentals</li>
+                                <li>Network Fundamentals</li>
+                                <li>How the Web Works</li>
+                                <li>Cloud Computing Fundamentals</li>
+                            </ul>
+                            <div style="margin-top: 1.2rem;">
+                                <a href="assets/images/certificates/THM-G8EOAOFVYC.pdf" target="_blank"
+                                    class="btn btn-outline" style="padding: 0.4rem 1rem; font-size: 0.8rem;">
+                                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                                        style="margin-right: 6px;">
+                                        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                                        <polyline points="14 2 14 8 20 8"></polyline>
+                                        <line x1="16" y1="13" x2="8" y2="13"></line>
+                                        <line x1="16" y1="17" x2="8" y2="17"></line>
+                                        <polyline points="10 9 9 9 8 9"></polyline>
+                                    </svg>
+                                    View Certificate
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <p class="about-text">These certifications strengthened my understanding of:</p>
+                    <div class="interests-grid" style="margin-top: 1rem;">
+                        <div class="interest-item"><span class="interest-emoji">🌐</span><span>DNS Resolution</span>
+                        </div>
+                        <div class="interest-item"><span class="interest-emoji">🔒</span><span>HTTP/HTTPS</span></div>
+                        <div class="interest-item"><span class="interest-emoji">📦</span><span>Packets & Frames</span>
+                        </div>
+                        <div class="interest-item"><span class="interest-emoji">🧱</span><span>WAF & Load
+                                Balancers</span></div>
+                        <div class="interest-item"><span class="interest-emoji">☁️</span><span>Cloud Deployments</span>
+                        </div>
+                    </div>
+                    <p class="about-text" style="margin-top: 1.5rem;"><strong>I focus on hands-on learning rather than
+                            theory-only certification.</strong></p>
+                </div>
+
+                <!-- What I am doing -->
+                <div style="margin-top: 3rem;">
+                    <h3>What I Am Already Doing</h3>
+                    <div class="about-grid">
+                        <div>
+                            <h4 class="about-subtitle">🔐 Cybersecurity Practice</h4>
+                            <ul class="about-list">
+                                <li>Performing lab-based vulnerability analysis</li>
+                                <li>Practicing networking concepts in real environments</li>
+                                <li>Studying DNS, web architecture, and traffic flow</li>
+                                <li>Learning system hardening techniques</li>
+                                <li>Exploring ethical hacking methodologies</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 class="about-subtitle">🐧 Linux & System-Level Work</h4>
+                            <ul class="about-list">
+                                <li>Daily driver: <strong>Arch Linux</strong></li>
+                                <li>Advanced Linux customization (Hyprland, Waybar)</li>
+                                <li>Managing dotfiles with Git & GitHub</li>
+                                <li>System automation using Bash</li>
+                                <li>Building a persistent Arch Linux USB</li>
+                                <li>System diagnostics & hardware inspection</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 class="about-subtitle">🤖 Development & Projects</h4>
+                            <ul class="about-list">
+                                <li>Building an AI virtual assistant (Python, Encrypted keys)</li>
+                                <li>Creating a browser-based AI chatbot architecture</li>
+                                <li>Learning socket programming in Python</li>
+                                <li>Working on Android-x86 custom ISO builds</li>
+                                <li>Researching bootloader unlocking (EDL method)</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Linux Expertise -->
+                <div style="margin-top: 3rem;">
+                    <h3>Linux Expertise</h3>
+                    <p class="about-text">
+                        I use <strong>Arch Linux</strong> as my primary operating system and work in a fully Linux-based
+                        workflow. I prefer terminal-driven environments and focus on understanding how Linux works
+                        internally rather than just using it at a surface level.
+                    </p>
+
+                    <div class="about-grid" style="margin-top: 1.5rem;">
+                        <div>
+                            <h4 class="about-subtitle">💻 Daily Linux Usage</h4>
+                            <ul class="about-list">
+                                <li>Arch Linux as my main OS</li>
+                                <li>Comfortable working entirely from the terminal</li>
+                                <li>Package management and system maintenance</li>
+                                <li>Installing, removing, and managing software manually</li>
+                                <li>Inspecting hardware and system information using Linux tools</li>
+                                <li>Managing user accounts and system configurations</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 class="about-subtitle">🎨 Customization & Setup</h4>
+                            <ul class="about-list">
+                                <li>Hyprland (Wayland compositor setup)</li>
+                                <li>Waybar configuration</li>
+                                <li>Rofi customization</li>
+                                <li>Managing dotfiles and syncing configurations using Git & GitHub</li>
+                                <li>Replacing and syncing config folders (e.g., `~/.config`)</li>
+                                <li>Working with file permissions and directory structures</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 class="about-subtitle">⚙️ System Management</h4>
+                            <ul class="about-list">
+                                <li>Writing and using Bash scripts</li>
+                                <li>Automating repetitive tasks</li>
+                                <li>Understanding file systems and directory hierarchy</li>
+                                <li>Copying, replacing, and syncing system files</li>
+                                <li>Working with persistent USB installations</li>
+                                <li>Creating a fully persistent Arch Linux installation on USB</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 class="about-subtitle">🌐 Networking & Diagnostics</h4>
+                            <ul class="about-list">
+                                <li>Checking DNS configuration</li>
+                                <li>Analyzing system network details</li>
+                                <li>Inspecting PCIe slots and hardware components</li>
+                                <li>Troubleshooting internet and DNS resolver issues</li>
+                                <li>Using Linux tools to diagnose system and network behavior</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 class="about-subtitle">🔬 Advanced Exploration</h4>
+                            <ul class="about-list">
+                                <li>Building custom Android-x86 ISO images</li>
+                                <li>Researching bootloader unlocking processes (EDL method study)</li>
+                                <li>Working close to system-level configuration and modification</li>
+                                <li>Managing secure backend environments for development projects</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div style="margin-top: 1.5rem;">
+                        <h4 class="about-subtitle">My Linux Approach</h4>
+                        <p class="about-text" style="margin-bottom: 0.5rem;">
+                            I don’t use Linux casually — I use it as a learning platform. I prefer understanding:
+                        </p>
+                        <ul class="about-list" style="margin-bottom: 1rem;">
+                            <li>How services run</li>
+                            <li>How networking works</li>
+                            <li>How system configuration impacts security</li>
+                            <li>How to customize and control the OS completely</li>
+                        </ul>
+                        <p class="about-text">
+                            <em>Linux is not just my operating system — it’s the foundation of my technical growth.</em>
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Technical Skills -->
+                <div style="margin-top: 3rem;">
+                    <h3>Technical Skills</h3>
+                    <div class="about-grid-wide">
+                        <div>
+                            <h4 class="about-subtitle">Programming</h4>
+                            <ul class="about-list">
+                                <li>Python (Backend logic, Socket programming, Automation)</li>
+                                <li>Bash (System scripting & Linux automation)</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 class="about-subtitle">Tools & Platforms</h4>
+                            <ul class="about-list">
+                                <li>Git & GitHub</li>
+                                <li>Linux Terminal workflow</li>
+                                <li>Virtual lab environments</li>
+                                <li>Android customization tools</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Areas of Interest -->
+                <div style="margin-top: 3rem;">
+                    <h3>Areas of Strong Interest</h3>
+                    <div class="snapshot-tags" style="margin-top: 1rem;">
+                        <span class="snapshot-tag">Vulnerability Assessment</span>
+                        <span class="snapshot-tag">Offensive Security Basics</span>
+                        <span class="snapshot-tag">Linux Internals</span>
+                        <span class="snapshot-tag">Networking Protocol Analysis</span>
+                        <span class="snapshot-tag">Secure Backend Development</span>
+                        <span class="snapshot-tag">AI + Security Integration</span>
+                    </div>
+                </div>
+
+                <!-- My Mindset -->
+                <div style="margin-top: 3rem;">
+                    <h3>My Mindset</h3>
+                    <ul class="about-list" style="margin-bottom: 1.5rem;">
+                        <li>Consistency over shortcuts</li>
+                        <li>Building before claiming knowledge</li>
+                        <li>Deep system-level understanding</li>
+                        <li>Continuous self-improvement</li>
+                    </ul>
+                    <p class="about-text">
+                        My goal is to become a highly skilled cybersecurity professional capable of identifying
+                        vulnerabilities, building secure systems, and developing intelligent tools that combine AI with
+                        security principles.
+                    </p>
+                </div>
+
+                <!-- Resume -->
+                <div class="resume-download" style="margin-top: 3rem;">
+                    <a href="resume/Amit_Resume.pdf" target="_blank" class="btn btn-primary">
                         📄 Download Resume
                     </a>
                 </div>
-
             </div>
         </section>
     </main>
@@ -191,8 +350,8 @@
         </div>
     </footer>
 
-    <script src="assets/js/theme.js"></script>
-    <script src="assets/js/main.js"></script>
+    <script src="assets/js/theme.js" defer></script>
+    <script src="assets/js/main.js" defer></script>
 </body>
 
 </html>

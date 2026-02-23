@@ -1,39 +1,35 @@
+// Theme toggle — runs immediately to prevent flash
+(function () {
+    const html = document.documentElement;
+    const saved = localStorage.getItem('theme');
+    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+
+    if (saved === 'light') {
+        html.setAttribute('data-theme', 'light');
+    } else if (saved === 'dark' || prefersDark) {
+        html.setAttribute('data-theme', 'dark');
+    }
+})();
+
 document.addEventListener('DOMContentLoaded', () => {
     const themeToggle = document.getElementById('theme-toggle');
-    const prefersDarkScheme = window.matchMedia('(prefers-color-scheme: dark)');
-
-    // Check local storage or system preference
-    const currentTheme = localStorage.getItem('theme');
-    const htmlElement = document.documentElement;
-
-    // Apply initial theme
-    if (currentTheme == 'dark') {
-        htmlElement.setAttribute('data-theme', 'dark');
-        updateIcon('dark');
-    } else if (currentTheme == 'light') {
-        htmlElement.setAttribute('data-theme', 'light');
-        updateIcon('light');
-    } else if (prefersDarkScheme.matches) {
-        htmlElement.setAttribute('data-theme', 'dark');
-        updateIcon('dark');
-    }
-
-    themeToggle.addEventListener('click', () => {
-        let theme = htmlElement.getAttribute('data-theme');
-
-        if (theme === 'dark') {
-            htmlElement.setAttribute('data-theme', 'light');
-            localStorage.setItem('theme', 'light');
-            updateIcon('light');
-        } else {
-            htmlElement.setAttribute('data-theme', 'dark');
-            localStorage.setItem('theme', 'dark');
-            updateIcon('dark');
-        }
-    });
+    const html = document.documentElement;
 
     function updateIcon(theme) {
-        const iconInfo = theme === 'dark' ? '☀️' : '🌙';
-        if (themeToggle) themeToggle.textContent = iconInfo;
+        if (themeToggle) themeToggle.textContent = theme === 'dark' ? '☀️' : '🌙';
+    }
+
+    // Set initial icon
+    updateIcon(html.getAttribute('data-theme'));
+
+    if (themeToggle) {
+        themeToggle.addEventListener('click', () => {
+            const current = html.getAttribute('data-theme');
+            const next = current === 'dark' ? 'light' : 'dark';
+
+            html.setAttribute('data-theme', next);
+            localStorage.setItem('theme', next);
+            updateIcon(next);
+        });
     }
 });
