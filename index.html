@@ -1,274 +1,313 @@
 <!DOCTYPE html>
 <html lang="en" data-theme="dark">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Amit Padhan | Cybersecurity & Developer</title>
-    <meta name="description"
-        content="Amit Padhan – Cybersecurity Enthusiast, Linux Power User, and Python Developer. Building secure systems one hack at a time.">
-    <meta name="keywords" content="Cybersecurity, Linux, Ethical Hacking, Python, CTF, Web Security, Amit Padhan">
-    <meta name="author" content="Amit Padhan">
-    <meta property="og:title" content="Amit Padhan | Cybersecurity & Developer">
-    <meta property="og:description" content="Cybersecurity Enthusiast, Linux Power User, and Python Developer">
-    <meta property="og:type" content="website">
-    <link rel="icon"
-        href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💻</text></svg>">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="stylesheet"
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;700&display=swap">
-    <link rel="stylesheet" href="assets/css/main.css">
-    <link rel="stylesheet" href="assets/css/responsive.css">
-    <link rel="preload" as="image" href="assets/images/profile/profile.png">
-</head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Amit Padhan | Cybersecurity & Developer</title>
+  <meta name="description" content="Amit Padhan – Cybersecurity Enthusiast, Linux Power User, and Python Developer.">
+  <meta name="keywords" content="Cybersecurity, Linux, Ethical Hacking, Python, CTF, Web Security, Amit Padhan">
+  <meta name="author" content="Amit Padhan">
+  <meta property="og:title" content="Amit Padhan | Cybersecurity & Developer">
+  <meta property="og:description" content="Cybersecurity Enthusiast, Linux Power User, and Python Developer">
+  <meta property="og:type" content="website">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💻</text></svg>">
+  <link rel="preload" as="image" href="assets/images/profile/profile.png">
+  <link rel="stylesheet" href="assets/css/main.css">
+  <!-- Responsive is now merged into main.css -->
+  <style>
+    /* ── SPLIT HERO ──────────────────────────────────────── */
+    .hero { min-height: 92vh; display: flex; align-items: center; }
+    .hero .container {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      align-items: center;
+      gap: 5rem;
+      padding-top: 2rem;
+      padding-bottom: 3rem;
+    }
 
+    /* Left column */
+    .hero-left {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1.25rem;
+    }
+
+    /* Profile: simple circle */
+    .profile-wrapper {
+      width: 160px;
+      height: 160px;
+      border-radius: 50%;
+      overflow: hidden;
+      border: 2px solid rgba(34,211,238,.45);
+      box-shadow: 0 0 0 8px rgba(34,211,238,.07);
+      flex-shrink: 0;
+    }
+    .profile-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .hero-social { display:flex; flex-direction:row; gap:.6rem; }
+    .hero-social a {
+      width: 38px; height: 38px;
+      border-radius: 50%;
+      border: 1px solid var(--clr-border);
+      display: flex; align-items:center; justify-content:center;
+      color: var(--clr-txt-muted);
+      transition: all var(--dur-fast) var(--ease);
+    }
+    .hero-social a:hover {
+      border-color: var(--clr-primary);
+      color: var(--clr-primary);
+      background: rgba(34,211,238,.08);
+      transform: scale(1.1);
+    }
+    .hero-social a svg { width:17px; height:17px; }
+
+    /* Right column */
+    .hero-right { display:flex; flex-direction:column; gap:1.25rem; }
+    .hero-title  { font-size: clamp(2.4rem, 5vw, 3.8rem); font-weight: 700; letter-spacing: -.04em; line-height: 1.1; }
+
+    /* Mobile hero stacked */
+    @media (max-width: 700px) {
+      .hero .container {
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: 2rem;
+      }
+      .hero-left { flex-direction: column; align-items: center; }
+      .hero-social { flex-direction: row; justify-content: center; }
+      .hero-right { align-items: center; }
+      .skill-list { justify-content: center; }
+      .hero-actions { justify-content: center; }
+    }
+  </style>
+</head>
 <body>
 
+<div id="scroll-progress"></div>
 
+<header>
+  <div class="glass">
+    <a href="index.html" class="logo" aria-label="Homepage">&lt;Amit /&gt;</a>
+    <button class="mobile-menu-btn" aria-label="Toggle navigation" aria-expanded="false">☰</button>
+    <nav class="site-nav" aria-label="Primary navigation">
+      <ul class="nav-links">
+        <li><a href="index.html" class="active">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="labs.html">Labs</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+    <button id="theme-toggle" aria-label="Toggle theme">☀️</button>
+  </div>
+</header>
 
+<main>
 
-    <div id="scroll-progress"></div>
+  <!-- ── HERO ─────────────────────────────────────────────── -->
+  <section class="hero">
+    <div class="container">
 
-    <header>
-        <div class="glass">
-            <a href="index.html" class="logo" aria-label="Homepage">&lt;Amit /&gt;</a>
-            <button class="mobile-menu-btn" aria-label="Toggle navigation" aria-expanded="false">☰</button>
-            <nav class="site-nav" aria-label="Primary navigation">
-                <ul class="nav-links">
-                    <li><a href="index.html" class="active">Home</a></li>
-                    <li><a href="about.html">About</a></li>
-                    <li><a href="projects.html">Projects</a></li>
-                    <li><a href="labs.html">Labs</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-                </ul>
-            </nav>
-            <button id="theme-toggle" aria-label="Toggle theme">☀️</button>
+      <!-- Left: photo + socials -->
+      <div class="hero-left fade-in">
+        <figure class="profile-wrapper">
+          <img src="assets/images/profile/profile.png"
+               alt="Amit Padhan – Cybersecurity Developer"
+               class="profile-img" width="160" height="160">
+        </figure>
+
+        <!-- social icons -->
+        <div class="hero-social">
+          <a href="https://github.com/amitpadhan525" target="_blank" rel="noopener" aria-label="GitHub">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+          </a>
+          <a href="https://linkedin.com/in/amit-padhan" target="_blank" rel="noopener" aria-label="LinkedIn">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+          </a>
+          <a href="https://instagram.com/a_m_i_t_01234" target="_blank" rel="noopener" aria-label="Instagram">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M7.8,2H16.2C19.4,2 22,4.6 22,7.8V16.2A5.8,5.8 0 0,1 16.2,22H7.8C4.6,22 2,19.4 2,16.2V7.8A5.8,5.8 0 0,1 7.8,2M7.6,4A3.6,3.6 0 0,0 4,7.6V16.4C4,18.39 5.61,20 7.6,20H16.4A3.6,3.6 0 0,0 20,16.4V7.6C20,5.61 18.39,4 16.4,4H7.6M17.25,5.5A1.25,1.25 0 0,1 18.5,6.75A1.25,1.25 0 0,1 17.25,8A1.25,1.25 0 0,1 16,6.75A1.25,1.25 0 0,1 17.25,5.5M12,7A5,5 0 0,1 17,12A5,5 0 0,1 12,17A5,5 0 0,1 7,12A5,5 0 0,1 12,7M12,9A3,3 0 0,0 9,12A3,3 0 0,0 12,15A3,3 0 0,0 15,12A3,3 0 0,0 12,9Z"/></svg>
+          </a>
         </div>
-    </header>
+      </div>
 
-    <main>
-        <section class="hero">
-            <div class="container fade-in">
-                <figure class="profile-wrapper reveal floating">
-                    <img src="assets/images/profile/profile.png" alt="Amit Padhan – Cybersecurity and Web Developer"
-                        class="profile-img" width="170" height="170">
-                </figure>
+      <!-- Right: text -->
+      <div class="hero-right">
+        <div class="hero-badge reveal">Open to Collaboration</div>
 
-                <h1 class="hero-title reveal reveal-delay-1">
-                    Hi, I'm <span class="text-gradient-flow floating" style="display: inline-block;">Amit</span>
-                </h1>
+        <h1 class="hero-title reveal reveal-delay-1">
+          Hi, I'm <span class="text-gradient-flow">Amit Padhan</span>
+        </h1>
 
-                <p class="hero-tagline reveal reveal-delay-2">
-                    Cybersecurity Enthusiast | Linux Power User | Python Developer
-                </p>
+        <p class="hero-tagline reveal reveal-delay-1">
+          Cybersecurity Enthusiast · Linux Power User · Python Developer
+        </p>
 
-                <p class="hero-subtitle reveal reveal-delay-2">
-                    I focus on ethical hacking, Linux internals, networking, and hands-on labs.
-                    I enjoy breaking systems to understand how to secure them.
-                </p>
+        <p class="hero-subtitle reveal reveal-delay-2">
+          I focus on ethical hacking, Linux internals, networking, and hands-on labs.
+          I enjoy breaking systems to understand how to secure them.
+        </p>
 
-                <ul class="skill-list reveal reveal-delay-3" aria-label="Key skills">
-                    <li class="skill-tag">Cybersecurity</li>
-                    <li class="skill-tag">Network Security</li>
-                    <li class="skill-tag">Linux & Python</li>
-                    <li class="skill-tag">Web Security</li>
-                    <li class="skill-tag">CTFs & Labs</li>
-                </ul>
+        <ul class="skill-list reveal reveal-delay-2" aria-label="Key skills">
+          <li class="skill-tag">Cybersecurity</li>
+          <li class="skill-tag">Network Security</li>
+          <li class="skill-tag">Linux &amp; Python</li>
+          <li class="skill-tag">Web Security</li>
+          <li class="skill-tag">CTFs &amp; Labs</li>
+        </ul>
 
-                <div class="hero-actions reveal reveal-delay-3">
-                    <a href="projects.html" class="btn btn-primary">View Projects</a>
-                    <a href="labs.html" class="btn btn-outline">CTF & Labs</a>
-                    <a href="assets/resume.pdf" target="_blank" class="btn btn-outline resume-btn">
-                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-right: 8px;">
-                            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
-                            <polyline points="7 10 12 15 17 10"></polyline>
-                            <line x1="12" y1="15" x2="12" y2="3"></line>
-                        </svg>
-                        Resume
-                    </a>
-                </div>
-            </div>
-        </section>
-
-
-
-        <!-- Skills Section -->
-        <section id="skills" class="container">
-            <div class="section-title">
-                <span>Expertise</span>
-                <h2>Skills & Tools</h2>
-            </div>
-            <div class="skills-grid">
-                <div class="glass-card reveal">
-                    <h3>🔐 Cybersecurity</h3>
-                    <ul>
-                        <li>Linux Privilege Escalation</li>
-                        <li>Web Vulnerabilities (OWASP Top 10)</li>
-                        <li>Network Scanning & Enumeration</li>
-                        <li>CTFs & Security Labs</li>
-                    </ul>
-                </div>
-                <div class="glass-card reveal reveal-delay-1">
-                    <h3>🛠️ Tools</h3>
-                    <ul>
-                        <li>Nmap, Burp Suite, Metasploit</li>
-                        <li>Wireshark</li>
-                        <li>Hydra</li>
-                        <li>Git & GitHub</li>
-                    </ul>
-                </div>
-                <div class="glass-card reveal reveal-delay-2">
-                    <h3>💻 Programming</h3>
-                    <ul>
-                        <li>Python</li>
-                        <li>Bash Scripting</li>
-                        <li>HTML, CSS, JavaScript</li>
-                        <li>C / C++</li>
-                    </ul>
-                </div>
-                <div class="glass-card reveal reveal-delay-3">
-                    <h3>🖥️ OS & Platforms</h3>
-                    <ul>
-                        <li>Arch Linux + Hyprland</li>
-                        <li>Kali Linux / Parrot OS</li>
-                        <li>Windows</li>
-                        <li>Docker & VMs</li>
-                    </ul>
-                </div>
-            </div>
-        </section>
-
-        <!-- Currently Learning Section -->
-        <section class="container">
-            <div class="section-title">
-                <span>Growing Every Day</span>
-                <h2>Currently Learning</h2>
-            </div>
-            <div class="learning-grid">
-                <div class="learning-card glass-card reveal">
-                    <div class="learning-icon">📡</div>
-                    <h3>Computer Networks</h3>
-                    <p>TCP/IP, OSI Model, subnetting, routing protocols – building a solid networking foundation for
-                        security work.</p>
-                    <div class="learning-progress">
-                        <div class="progress-bar" style="--progress: 65%"></div>
-                    </div>
-                    <span class="progress-label">Semester 4 — In Progress</span>
-                </div>
-                <div class="learning-card glass-card reveal reveal-delay-1">
-                    <div class="learning-icon">🗃️</div>
-                    <h3>Database Systems</h3>
-                    <p>SQL, normalization, ER diagrams, and relational databases – learning the backbone of data
-                        management.</p>
-                    <div class="learning-progress">
-                        <div class="progress-bar" style="--progress: 55%"></div>
-                    </div>
-                    <span class="progress-label">Semester 4 — In Progress</span>
-                </div>
-                <div class="learning-card glass-card reveal reveal-delay-2">
-                    <div class="learning-icon">🐍</div>
-                    <h3>Python for Security</h3>
-                    <p>Writing port scanners, password crackers, and automation scripts using Python for offensive
-                        security.</p>
-                    <div class="learning-progress">
-                        <div class="progress-bar" style="--progress: 50%"></div>
-                    </div>
-                    <span class="progress-label">Self-Learning</span>
-                </div>
-                <div class="learning-card glass-card reveal reveal-delay-3">
-                    <div class="learning-icon">🏴‍☠️</div>
-                    <h3>CTF Challenges</h3>
-                    <p>Actively practicing on TryHackMe and HackTheBox to sharpen web exploitation and privilege
-                        escalation skills.</p>
-                    <div class="learning-progress">
-                        <div class="progress-bar" style="--progress: 40%"></div>
-                    </div>
-                    <span class="progress-label">Ongoing Practice</span>
-                </div>
-            </div>
-        </section>
-
-        <!-- Terminal Widget -->
-        <section class="container">
-            <div class="section-title">
-                <span>Hacker Vibes</span>
-                <h2>My Terminal</h2>
-            </div>
-            <div class="terminal-widget glass-card reveal">
-                <div class="terminal-header">
-                    <div class="terminal-dots">
-                        <span class="dot dot-red"></span>
-                        <span class="dot dot-yellow"></span>
-                        <span class="dot dot-green"></span>
-                    </div>
-                    <span class="terminal-title">amit@arch: ~ </span>
-                </div>
-                <div class="terminal-body" id="terminal-output">
-                    <div class="terminal-line"><span class="terminal-prompt">amit@arch ~ $</span> <span
-                            class="terminal-cmd typing-anim delay-1">whoami</span></div>
-                    <div class="terminal-line terminal-output-text fade-in-anim delay-2">> Amit Padhan</div>
-                    <div class="terminal-line terminal-output-text fade-in-anim delay-2">> Security Researcher | Backend
-                        Developer</div>
-
-                    <div class="terminal-line fade-in-anim delay-3" style="margin-top: 0.5rem;"><span
-                            class="terminal-prompt">amit@arch ~
-                            $</span> <span class="terminal-cmd typing-anim delay-4">cat sys_status.log</span></div>
-                    <div class="terminal-line terminal-output-text fade-in-anim delay-5">> OS: Arch Linux [Kernel 6.x]
-                    </div>
-                    <div class="terminal-line terminal-output-text fade-in-anim delay-5">> Environment: Hyprland
-                        (Wayland)</div>
-                    <div class="terminal-line terminal-output-text fade-in-anim delay-5">> Current Mission: Mastering
-                        Web Exploitation</div>
-
-                    <div class="terminal-line fade-in-anim delay-6" style="margin-top: 0.5rem;"><span
-                            class="terminal-prompt">amit@arch ~
-                            $</span> <span class="terminal-cmd typing-anim delay-7">./run_exploit.sh
-                            --target=future</span></div>
-                    <div class="terminal-line terminal-output-text fade-in-anim delay-8"
-                        style="color: var(--color-primary);">> Access
-                        Granted. Initializing systems... [OK]</div>
-
-                    <div class="terminal-line fade-in-anim delay-9" style="margin-top: 0.5rem;"><span
-                            class="terminal-prompt">amit@arch ~
-                            $</span> <span class="terminal-cursor">▌</span></div>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <footer class="site-footer">
-        <div class="container">
-            <p>&copy; 2026 Amit Padhan. All rights reserved.</p>
-            <nav aria-label="Social links" class="social-links">
-                <a href="https://github.com/amitpadhan525" target="_blank" rel="noopener" aria-label="GitHub">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                        fill="currentColor">
-                        <path
-                            d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
-                    </svg>
-                </a>
-                <a href="https://linkedin.com/in/amit-padhan" target="_blank" rel="noopener" aria-label="LinkedIn">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                        fill="currentColor">
-                        <path
-                            d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
-                    </svg>
-                </a>
-                <a href="https://instagram.com/a_m_i_t_01234" target="_blank" rel="noopener" aria-label="Instagram">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                        fill="currentColor">
-                        <path
-                            d="M7.8,2H16.2C19.4,2 22,4.6 22,7.8V16.2A5.8,5.8 0 0,1 16.2,22H7.8C4.6,22 2,19.4 2,16.2V7.8A5.8,5.8 0 0,1 7.8,2M7.6,4A3.6,3.6 0 0,0 4,7.6V16.4C4,18.39 5.61,20 7.6,20H16.4A3.6,3.6 0 0,0 20,16.4V7.6C20,5.61 18.39,4 16.4,4H7.6M17.25,5.5A1.25,1.25 0 0,1 18.5,6.75A1.25,1.25 0 0,1 17.25,8A1.25,1.25 0 0,1 16,6.75A1.25,1.25 0 0,1 17.25,5.5M12,7A5,5 0 0,1 17,12A5,5 0 0,1 12,17A5,5 0 0,1 7,12A5,5 0 0,1 12,7M12,9A3,3 0 0,0 9,12A3,3 0 0,0 12,15A3,3 0 0,0 15,12A3,3 0 0,0 12,9Z" />
-                    </svg>
-                </a>
-            </nav>
+        <div class="hero-actions reveal reveal-delay-3">
+          <a href="projects.html" class="btn btn-primary">View Projects</a>
+          <a href="labs.html"     class="btn btn-outline">CTF &amp; Labs</a>
+          <a href="assets/resume.pdf" target="_blank" class="btn btn-outline resume-btn">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/>
+            </svg>
+            Resume
+          </a>
         </div>
-    </footer>
+      </div>
 
-    <script src="assets/js/theme.js" defer></script>
-    <script src="assets/js/main.js" defer></script>
+    </div>
+  </section>
+
+  <!-- ── SKILLS ─────────────────────────────────────────────── -->
+  <section id="skills" class="container">
+    <div class="section-title">
+      <span>Expertise</span>
+      <h2>Skills &amp; Tools</h2>
+    </div>
+    <div class="skills-grid">
+      <div class="glass-card spotlight-card reveal">
+        <h3>🔐 Cybersecurity</h3>
+        <ul>
+          <li>Linux Privilege Escalation</li>
+          <li>Web Vulnerabilities (OWASP Top 10)</li>
+          <li>Network Scanning &amp; Enumeration</li>
+          <li>CTFs &amp; Security Labs</li>
+        </ul>
+      </div>
+      <div class="glass-card spotlight-card reveal reveal-delay-1">
+        <h3>🛠️ Tools</h3>
+        <ul>
+          <li>Nmap, Burp Suite, Metasploit</li>
+          <li>Wireshark</li>
+          <li>Hydra</li>
+          <li>Git &amp; GitHub</li>
+        </ul>
+      </div>
+      <div class="glass-card spotlight-card reveal reveal-delay-2">
+        <h3>💻 Programming</h3>
+        <ul>
+          <li>Python</li>
+          <li>Bash Scripting</li>
+          <li>HTML, CSS, JavaScript</li>
+          <li>C / C++</li>
+        </ul>
+      </div>
+      <div class="glass-card spotlight-card reveal reveal-delay-3">
+        <h3>🖥️ OS &amp; Platforms</h3>
+        <ul>
+          <li>Arch Linux + Hyprland</li>
+          <li>Kali Linux / Parrot OS</li>
+          <li>Windows</li>
+          <li>Docker &amp; VMs</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── LEARNING ────────────────────────────────────────────── -->
+  <section class="container">
+    <div class="section-title">
+      <span>Growing Every Day</span>
+      <h2>Currently Learning</h2>
+    </div>
+    <div class="learning-grid">
+      <div class="learning-card glass-card reveal">
+        <div class="learning-icon">📡</div>
+        <h3>Computer Networks</h3>
+        <p>TCP/IP, OSI Model, subnetting, routing protocols — building a solid networking foundation for security work.</p>
+        <div class="learning-progress"><div class="progress-bar" style="--progress:65%"></div></div>
+        <span class="progress-label">Semester 4 — In Progress</span>
+      </div>
+      <div class="learning-card glass-card reveal reveal-delay-2">
+        <div class="learning-icon">🐍</div>
+        <h3>Python for Security</h3>
+        <p>Writing port scanners, password crackers, and automation scripts using Python for offensive security.</p>
+        <div class="learning-progress"><div class="progress-bar" style="--progress:50%"></div></div>
+        <span class="progress-label">Self-Learning</span>
+      </div>
+      <div class="learning-card glass-card reveal reveal-delay-3">
+        <div class="learning-icon">🏴‍☠️</div>
+        <h3>CTF Challenges</h3>
+        <p>Actively practicing on TryHackMe and HackTheBox to sharpen web exploitation and privilege escalation skills.</p>
+        <div class="learning-progress"><div class="progress-bar" style="--progress:40%"></div></div>
+        <span class="progress-label">Ongoing Practice</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── TERMINAL ───────────────────────────────────────────── -->
+  <section class="container">
+    <div class="section-title">
+      <span>Hacker Vibes</span>
+      <h2>My Terminal</h2>
+    </div>
+    <div class="terminal-widget glass-card reveal">
+      <div class="terminal-header">
+        <div class="terminal-dots">
+          <span class="dot dot-red"></span>
+          <span class="dot dot-yellow"></span>
+          <span class="dot dot-green"></span>
+        </div>
+        <span class="terminal-title">amit@arch: ~</span>
+      </div>
+      <div class="terminal-body" id="terminal-output">
+        <div class="terminal-line"><span class="terminal-prompt">amit@arch ~ $</span> <span class="terminal-cmd typing-anim delay-1">whoami</span></div>
+        <div class="terminal-line terminal-output-text fade-in-anim delay-2">&gt; Amit Padhan</div>
+        <div class="terminal-line terminal-output-text fade-in-anim delay-2">&gt; Security Researcher | Backend Developer</div>
+
+        <div class="terminal-line fade-in-anim delay-3" style="margin-top:.5rem"><span class="terminal-prompt">amit@arch ~ $</span> <span class="terminal-cmd typing-anim delay-4">cat sys_status.log</span></div>
+        <div class="terminal-line terminal-output-text fade-in-anim delay-5">&gt; OS: Arch Linux [Kernel 6.x]</div>
+        <div class="terminal-line terminal-output-text fade-in-anim delay-5">&gt; Environment: Hyprland (Wayland)</div>
+        <div class="terminal-line terminal-output-text fade-in-anim delay-5">&gt; Current Mission: Mastering Web Exploitation</div>
+
+        <div class="terminal-line fade-in-anim delay-6" style="margin-top:.5rem"><span class="terminal-prompt">amit@arch ~ $</span> <span class="terminal-cmd typing-anim delay-7">./run_exploit.sh --target=future</span></div>
+        <div class="terminal-line terminal-output-text fade-in-anim delay-8" style="color:var(--clr-primary)">&gt; Access Granted. Initializing systems... [OK]</div>
+
+        <div class="terminal-line fade-in-anim delay-9" style="margin-top:.5rem"><span class="terminal-prompt">amit@arch ~ $</span> <span class="terminal-cursor">▌</span></div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <p>&copy; 2026 Amit Padhan. All rights reserved.</p>
+    <nav aria-label="Social links" class="social-links">
+      <a href="https://github.com/amitpadhan525" target="_blank" rel="noopener" aria-label="GitHub">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+      </a>
+      <a href="https://linkedin.com/in/amit-padhan" target="_blank" rel="noopener" aria-label="LinkedIn">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+      </a>
+      <a href="https://instagram.com/a_m_i_t_01234" target="_blank" rel="noopener" aria-label="Instagram">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M7.8,2H16.2C19.4,2 22,4.6 22,7.8V16.2A5.8,5.8 0 0,1 16.2,22H7.8C4.6,22 2,19.4 2,16.2V7.8A5.8,5.8 0 0,1 7.8,2M7.6,4A3.6,3.6 0 0,0 4,7.6V16.4C4,18.39 5.61,20 7.6,20H16.4A3.6,3.6 0 0,0 20,16.4V7.6C20,5.61 18.39,4 16.4,4H7.6M17.25,5.5A1.25,1.25 0 0,1 18.5,6.75A1.25,1.25 0 0,1 17.25,8A1.25,1.25 0 0,1 16,6.75A1.25,1.25 0 0,1 17.25,5.5M12,7A5,5 0 0,1 17,12A5,5 0 0,1 12,17A5,5 0 0,1 7,12A5,5 0 0,1 12,7M12,9A3,3 0 0,0 9,12A3,3 0 0,0 12,15A3,3 0 0,0 15,12A3,3 0 0,0 12,9Z"/></svg>
+      </a>
+    </nav>
+  </div>
+</footer>
+
+<button class="scroll-top-btn" aria-label="Back to top">↑</button>
+
+<script src="assets/js/theme.js" defer></script>
+<script src="assets/js/main.js" defer></script>
 </body>
-
 </html>
