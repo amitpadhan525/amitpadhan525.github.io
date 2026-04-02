@@ -1,109 +1,162 @@
 <!DOCTYPE html>
 <html lang="en" data-theme="dark">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact | Amit Padhan</title>
-    <meta name="description" content="Get in touch with Amit Padhan – Cybersecurity Enthusiast and Developer">
-    <link rel="icon"
-        href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💻</text></svg>">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="stylesheet"
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;700&display=swap">
-    <link rel="stylesheet" href="assets/css/main.css">
-    <link rel="stylesheet" href="assets/css/responsive.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact | Amit Padhan</title>
+  <meta name="description" content="Get in touch with Amit Padhan – Cybersecurity Enthusiast and Developer. Open to collaborations and internships.">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💻</text></svg>">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="assets/css/main.css">
+  <script defer data-domain="amitpadhan525.github.io" src="https://plausible.io/js/script.js"></script>
 </head>
-
 <body>
 
+<div id="scroll-progress"></div>
+<header>
+  <div class="glass">
+    <a href="index.html" class="logo">&lt;Amit /&gt;</a>
+    <button class="mobile-menu-btn" aria-label="Toggle navigation" aria-expanded="false">☰</button>
+    <nav class="site-nav" aria-label="Primary navigation">
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="labs.html">Labs</a></li>
+        <li><a href="contact.html" class="active">Contact</a></li>
+      </ul>
+    </nav>
+    <button id="theme-toggle" aria-label="Toggle theme">☀️</button>
+  </div>
+</header>
 
+<main>
+  <section class="container fade-in">
+    <div class="section-title">
+      <span>Get In Touch</span>
+      <h1>Contact Me</h1>
+    </div>
 
+    <!-- Success toast -->
+    <div id="form-toast" class="form-toast" role="alert" aria-live="polite" hidden>
+      <span class="form-toast-icon">✅</span>
+      <span id="form-toast-msg">Message sent! I'll get back to you soon.</span>
+    </div>
 
-    <div id="scroll-progress"></div>
-    <header>
-        <div class="glass">
-            <a href="index.html" class="logo">&lt;Amit /&gt;</a>
-            <button class="mobile-menu-btn" aria-label="Toggle navigation" aria-expanded="false">☰</button>
-            <nav class="site-nav" aria-label="Primary navigation">
-                <ul class="nav-links">
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="about.html">About</a></li>
-                    <li><a href="projects.html">Projects</a></li>
-                    <li><a href="labs.html">Labs</a></li>
-                    <li><a href="contact.html" class="active">Contact</a></li>
-                </ul>
-            </nav>
-            <button id="theme-toggle" aria-label="Toggle theme">☀️</button>
+    <div class="glass-card contact-container reveal">
+      <p class="contact-text">Have a project in mind or want to discuss security? Send me a message!</p>
+
+      <form action="https://formsubmit.co/amitpadhan525@gmail.com" method="POST" class="contact-form" id="contact-form" novalidate>
+        <input type="hidden" name="_next" value="https://amitpadhan525.github.io/contact.html?sent=true">
+        <input type="hidden" name="_subject" value="Portfolio Contact — New Message">
+        <input type="hidden" name="_captcha" value="false">
+        <input type="hidden" name="_template" value="table">
+
+        <div class="form-group">
+          <label for="name">Name</label>
+          <input type="text" id="name" name="name" class="form-input" placeholder="Your Name" required autocomplete="name">
         </div>
-    </header>
-    <main>
-        <section class="container fade-in">
-            <div class="section-title">
-                <span>Get In Touch</span>
-                <h1>Contact Me</h1>
-            </div>
-            <div class="glass-card contact-container reveal">
-                <p class="contact-text">Have a project in mind or want to discuss security? Send me a message!</p>
-                <form action="https://formsubmit.co/amitpadhan525@gmail.com" method="POST" class="contact-form">
-                    <input type="hidden" name="_next" value="https://amitpadhan525.github.io/contact.html">
-                    <input type="hidden" name="_subject" value="New Contact Form Submission!">
-                    <input type="hidden" name="_captcha" value="false">
-                    <div class="form-group">
-                        <label for="name">Name</label>
-                        <input type="text" id="name" name="name" class="form-input" placeholder="Your Name" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="email">Email</label>
-                        <input type="email" id="email" name="email" class="form-input" placeholder="your@email.com"
-                            required>
-                    </div>
-                    <div class="form-group">
-                        <label for="message">Message</label>
-                        <textarea id="message" name="message" rows="5" class="form-textarea"
-                            placeholder="What would you like to say?" required></textarea>
-                    </div>
-                    <button type="submit" class="btn btn-primary" style="width: 100%;">Send Message</button>
-                </form>
-                <div class="social-connect">
-                    <h4>Or connect directly:</h4>
-                    <div class="connect-links">
-                        <a href="mailto:amitpadhan525@gmail.com">amitpadhan525@gmail.com</a>
-                        <a href="https://linkedin.com/in/amit-padhan" target="_blank" rel="noopener">LinkedIn</a>
-                        <a href="https://github.com/amitpadhan525" target="_blank" rel="noopener">GitHub</a>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </main>
-    <footer class="site-footer">
-        <div class="container">
-            <p>&copy; 2026 Amit Padhan. All rights reserved.</p>
-            <nav aria-label="Social links" class="social-links">
-                <a href="https://github.com/amitpadhan525" target="_blank" rel="noopener" aria-label="GitHub"><svg
-                        xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                        fill="currentColor">
-                        <path
-                            d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
-                    </svg></a>
-                <a href="https://linkedin.com/in/amit-padhan" target="_blank" rel="noopener" aria-label="LinkedIn"><svg
-                        xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                        fill="currentColor">
-                        <path
-                            d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
-                    </svg></a>
-                <a href="https://instagram.com/a_m_i_t_01234" target="_blank" rel="noopener" aria-label="Instagram"><svg
-                        xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                        fill="currentColor">
-                        <path
-                            d="M7.8,2H16.2C19.4,2 22,4.6 22,7.8V16.2A5.8,5.8 0 0,1 16.2,22H7.8C4.6,22 2,19.4 2,16.2V7.8A5.8,5.8 0 0,1 7.8,2M7.6,4A3.6,3.6 0 0,0 4,7.6V16.4C4,18.39 5.61,20 7.6,20H16.4A3.6,3.6 0 0,0 20,16.4V7.6C20,5.61 18.39,4 16.4,4H7.6M17.25,5.5A1.25,1.25 0 0,1 18.5,6.75A1.25,1.25 0 0,1 17.25,8A1.25,1.25 0 0,1 16,6.75A1.25,1.25 0 0,1 17.25,5.5M12,7A5,5 0 0,1 17,12A5,5 0 0,1 12,17A5,5 0 0,1 7,12A5,5 0 0,1 12,7M12,9A3,3 0 0,0 9,12A3,3 0 0,0 12,15A3,3 0 0,0 15,12A3,3 0 0,0 12,9Z" />
-                    </svg></a>
-            </nav>
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" class="form-input" placeholder="your@email.com" required autocomplete="email">
         </div>
-    </footer>
-    <script src="assets/js/theme.js" defer></script>
-    <script src="assets/js/main.js" defer></script>
+        <div class="form-group">
+          <label for="subject">Subject</label>
+          <input type="text" id="subject" name="subject" class="form-input" placeholder="What is this about?" required>
+        </div>
+        <div class="form-group">
+          <label for="message">Message</label>
+          <textarea id="message" name="message" rows="5" class="form-textarea" placeholder="What would you like to say?" required></textarea>
+        </div>
+        <button type="submit" id="submit-btn" class="btn btn-primary" style="width:100%">
+          <span id="submit-text">Send Message</span>
+          <span id="submit-loader" style="display:none">Sending…</span>
+        </button>
+      </form>
+
+      <div class="social-connect">
+        <h4>Or connect directly:</h4>
+        <div class="connect-links">
+          <a href="mailto:amitpadhan525@gmail.com">amitpadhan525@gmail.com</a>
+          <a href="https://linkedin.com/in/amit-padhan" target="_blank" rel="noopener">LinkedIn</a>
+          <a href="https://github.com/amitpadhan525" target="_blank" rel="noopener">GitHub</a>
+          <a href="https://tryhackme.com/p/amitpadhan525" target="_blank" rel="noopener">TryHackMe</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Quick info cards -->
+    <div class="contact-info-grid reveal">
+      <div class="contact-info-card glass-card">
+        <span class="contact-info-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="24" height="24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+        </span>
+        <div class="contact-info-text">
+          <div class="contact-info-label">Email</div>
+          <a href="mailto:amitpadhan525@gmail.com" class="contact-info-value">amitpadhan525@gmail.com</a>
+        </div>
+      </div>
+      <div class="contact-info-card glass-card">
+        <span class="contact-info-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="24" height="24"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+        </span>
+        <div class="contact-info-text">
+          <div class="contact-info-label">Location</div>
+          <div class="contact-info-value">India</div>
+        </div>
+      </div>
+      <div class="contact-info-card glass-card">
+        <span class="contact-info-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="24" height="24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+        </span>
+        <div class="contact-info-text">
+          <div class="contact-info-label">Response Time</div>
+          <div class="contact-info-value">Within 24 hours</div>
+        </div>
+      </div>
+      <div class="contact-info-card glass-card">
+        <span class="contact-info-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="24" height="24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+        </span>
+        <div class="contact-info-text">
+          <div class="contact-info-label">Status</div>
+          <div class="contact-info-value contact-open">Open to Opportunities</div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <nav aria-label="Social links" class="social-links">
+      <a href="https://github.com/amitpadhan525" target="_blank" rel="noopener" aria-label="GitHub">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+      </a>
+      <a href="https://linkedin.com/in/amit-padhan" target="_blank" rel="noopener" aria-label="LinkedIn">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+      </a>
+    </nav>
+    <p class="footer-copy">&copy; <span id="footer-year"></span> Amit Padhan. All rights reserved.</p>
+  </div>
+</footer>
+
+<button class="scroll-top-btn" aria-label="Back to top">↑</button>
+<script src="assets/js/theme.js" defer></script>
+<script src="assets/js/main.js" defer></script>
+<script>
+  // Show success toast if redirected back after form send
+  if (new URLSearchParams(window.location.search).get('sent') === 'true') {
+    const toast = document.getElementById('form-toast');
+    if (toast) {
+      toast.hidden = false;
+      toast.classList.add('form-toast-visible');
+      setTimeout(() => toast.classList.remove('form-toast-visible'), 5000);
+    }
+    // Clean URL
+    history.replaceState({}, '', 'contact.html');
+  }
+</script>
 </body>
-
 </html>

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>404 — Page Not Found | Amit Padhan</title>
+  <meta name="description" content="This page doesn't exist. Go back home.">
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💻</text></svg>">
+  <link rel="stylesheet" href="assets/css/main.css">
+  <script src="assets/js/theme.js"></script>
+</head>
+<body>
+
+<div id="scroll-progress"></div>
+<header>
+  <div class="glass">
+    <a href="index.html" class="logo">&lt;Amit /&gt;</a>
+    <nav class="site-nav" aria-label="Primary navigation">
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="labs.html">Labs</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+    <button id="theme-toggle" aria-label="Toggle theme">☀️</button>
+  </div>
+</header>
+
+<main>
+  <section class="not-found-section">
+    <div class="container">
+      <div class="not-found-terminal glass-card">
+        <div class="terminal-header">
+          <div class="terminal-dots">
+            <span class="dot dot-red"></span>
+            <span class="dot dot-yellow"></span>
+            <span class="dot dot-green"></span>
+          </div>
+          <span class="terminal-title">amit@arch: ~</span>
+        </div>
+        <div class="terminal-body">
+          <div class="terminal-line">
+            <span class="terminal-prompt">amit@arch ~ $</span>
+            <span class="terminal-cmd"> curl amitpadhan525.github.io<span id="nf-path"></span></span>
+          </div>
+          <div class="terminal-line terminal-output-text" style="color:var(--clr-red); margin-top:.5rem">
+            &gt; Error 404: Page not found
+          </div>
+          <div class="terminal-line terminal-output-text">&gt; The requested resource does not exist on this server.</div>
+          <div class="terminal-line terminal-output-text">&gt; Maybe it was moved, deleted, or never existed.</div>
+          <div class="terminal-line" style="margin-top:.75rem">
+            <span class="terminal-prompt">amit@arch ~ $</span>
+            <span class="terminal-cmd"> ls /valid-pages/</span>
+          </div>
+          <div class="terminal-line terminal-output-text">
+            &gt; index.html &nbsp; about.html &nbsp; projects.html &nbsp; labs.html &nbsp; contact.html
+          </div>
+          <div class="terminal-line" style="margin-top:.75rem">
+            <span class="terminal-prompt">amit@arch ~ $</span>
+            <span class="terminal-cursor">▌</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="not-found-content">
+        <span class="not-found-code">404</span>
+        <h1 class="not-found-title">Page Not Found</h1>
+        <p class="not-found-msg">Looks like you ventured into uncharted territory. This page doesn't exist — or maybe you've been hacked? 😅</p>
+        <div class="not-found-actions">
+          <a href="index.html" class="btn btn-primary">← Back to Home</a>
+          <a href="projects.html" class="btn btn-outline">View Projects</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <p class="footer-copy">&copy; <span id="footer-year"></span> Amit Padhan. All rights reserved.</p>
+  </div>
+</footer>
+
+<script>
+  // Show the attempted path — strip local file:// prefix, show only the page name
+  const pathEl = document.getElementById('nf-path');
+  if (pathEl) {
+    const raw = window.location.pathname;
+    // Show only the last segment (e.g. /blog or /unknown)
+    const segment = raw.replace(/.*\/([^/]*)$/, '/$1');
+    pathEl.textContent = segment === '/404.html' ? '/???' : segment;
+  }
+  // Footer year
+  const fy = document.getElementById('footer-year');
+  if (fy) fy.textContent = new Date().getFullYear();
+  // Theme toggle
+  const tt = document.getElementById('theme-toggle');
+  const html = document.documentElement;
+  if (tt) {
+    tt.textContent = html.getAttribute('data-theme') === 'dark' ? '☀️' : '🌙';
+    tt.addEventListener('click', () => {
+      const next = html.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+      html.setAttribute('data-theme', next);
+      localStorage.setItem('theme', next);
+      tt.textContent = next === 'dark' ? '☀️' : '🌙';
+    });
+  }
+</script>
+</body>
+</html>

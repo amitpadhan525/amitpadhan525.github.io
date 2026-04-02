@@ -1,204 +1,264 @@
 <!DOCTYPE html>
 <html lang="en" data-theme="dark">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Projects | Amit Padhan</title>
-    <meta name="description"
-        content="Projects by Amit Padhan – Portfolio website, Bash scripts, cybersecurity tools, and more.">
-    <link rel="icon"
-        href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💻</text></svg>">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="stylesheet"
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;700&display=swap">
-    <link rel="stylesheet" href="assets/css/main.css">
-    <link rel="stylesheet" href="assets/css/responsive.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Projects | Amit Padhan</title>
+  <meta name="description" content="Projects by Amit Padhan – Port Scanner, Web Vuln Scanner, Dotfiles, Bash scripts, and more cybersecurity tools.">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💻</text></svg>">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="assets/css/main.css">
+  <script defer data-domain="amitpadhan525.github.io" src="https://plausible.io/js/script.js"></script>
 </head>
-
 <body>
 
+<div id="scroll-progress"></div>
+<header>
+  <div class="glass">
+    <a href="index.html" class="logo">&lt;Amit /&gt;</a>
+    <button class="mobile-menu-btn" aria-label="Toggle navigation" aria-expanded="false">☰</button>
+    <nav class="site-nav" aria-label="Primary navigation">
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="projects.html" class="active">Projects</a></li>
+        <li><a href="labs.html">Labs</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+    <button id="theme-toggle" aria-label="Toggle theme">☀️</button>
+  </div>
+</header>
 
-
-
-    <div id="scroll-progress"></div>
-
-    <header>
-        <div class="glass">
-            <a href="index.html" class="logo">&lt;Amit /&gt;</a>
-            <button class="mobile-menu-btn" aria-label="Toggle navigation" aria-expanded="false">☰</button>
-            <nav class="site-nav" aria-label="Primary navigation">
-                <ul class="nav-links">
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="about.html">About</a></li>
-                    <li><a href="projects.html" class="active">Projects</a></li>
-                    <li><a href="labs.html">Labs</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-                </ul>
-            </nav>
-            <button id="theme-toggle" aria-label="Toggle theme">☀️</button>
-        </div>
-    </header>
-
-    <main>
-        <section class="container fade-in">
-            <div class="section-title">
-                <span>My Code</span>
-                <h1>Projects</h1>
-            </div>
-
-            <div class="projects-grid">
-                <!-- Project 1: Portfolio Website -->
-                <article class="project-card visual reveal">
-                    <figure class="project-image">
-                        <img src="assets/images/projects/portfolio-preview.png" alt="Portfolio Website Preview"
-                            loading="lazy" decoding="async">
-                    </figure>
-                    <div class="project-content">
-                        <h3>Portfolio Website</h3>
-                        <p>A personal portfolio site with glassmorphism design, dark mode, and responsive layout.</p>
-                        <div class="tech-stack">
-                            <span class="tech-label">Tech Stack:</span>
-                            <div class="tech-tags">
-                                <span class="tech-tag">HTML5</span>
-                                <span class="tech-tag">CSS3</span>
-                                <span class="tech-tag">JavaScript</span>
-                            </div>
-                        </div>
-
-                        <div class="card-details" style="display: none;">
-                            <p>This portfolio website is a showcase of my journey as a developer and security
-                                enthusiast. It features a completely custom design built from scratch without any heavy
-                                frameworks.</p>
-                            <h4>Key Features:</h4>
-                            <ul>
-                                <li><strong>Glassmorphism UI:</strong> Modern, translucent card designs with backdrop
-                                    filters.</li>
-                                <li><strong>Dark Mode:</strong> A persistent theme toggle that saves user preference.
-                                </li>
-                                <li><strong>Responsive:</strong> Fully fluid layout adapting to mobile and desktop
-                                    screens.</li>
-                                <li><strong>Animations:</strong> Smooth scroll-reveal effects using Intersection
-                                    Observer.</li>
-                            </ul>
-                        </div>
-
-                        <div class="project-links">
-                            <a href="https://github.com/amitpadhan525/amitpadhan525.github.io" target="_blank"
-                                rel="noopener" class="link-btn link-btn-outline">View Code</a>
-                            <a href="index.html" class="link-btn link-btn-fill">Live Demo</a>
-                        </div>
-                    </div>
-                </article>
-
-                <!-- Project 2: System Info Script -->
-                <article class="project-card visual reveal reveal-delay-1">
-                    <figure class="project-image">
-                        <img src="assets/images/projects/system-info/system_info.png"
-                            alt="System Info Script Screenshot" loading="lazy" decoding="async">
-                    </figure>
-                    <div class="project-content">
-                        <h3>System Info Script</h3>
-                        <p>A light-weight Bash script that gathers and displays essential system information, hardware
-                            details, and resource usage in a readable format.</p>
-                        <div class="tech-stack">
-                            <span class="tech-label">Tech Stack:</span>
-                            <div class="tech-tags">
-                                <span class="tech-tag">Bash</span>
-                                <span class="tech-tag">Linux</span>
-                                <span class="tech-tag">CLI</span>
-                            </div>
-                        </div>
-
-                        <div class="card-details" style="display: none;">
-                            <p>This project is a collection of Linux Bash scripts designed for system administration and
-                                monitoring. It focuses on providing quick diagnostics for system hardware and software
-                                details.</p>
-                            <h4>Included Scripts:</h4>
-                            <ul>
-                                <li><strong>system_info_colorfull.sh:</strong> Comprehensive dashboard with OS
-                                    detection, Kernel, Uptime, CPU, RAM, GPU, and Network Status.</li>
-                                <li><strong>system_info.sh:</strong> The standard plain-text version suitable for
-                                    logging or simple terminal viewing.</li>
-                                <li><strong>CPU_info_colorfull.sh:</strong> Specialized script for detailed CPU analysis
-                                    and specifications.</li>
-                            </ul>
-                            <h4>Key Features:</h4>
-                            <ul>
-                                <li><strong>System Dashboard:</strong> Real-time overview of core system metrics.</li>
-                                <li><strong>Hardware Analysis:</strong> Detailed breakdown of CPU and Memory
-                                    specifications.</li>
-                                <li><strong>Flexible Output:</strong> Choose between visual-friendly colorful output or
-                                    log-friendly plain text.</li>
-                            </ul>
-                            <h4>Screenshots:</h4>
-                            <div>
-                                <p>System Info Dashboard</p>
-                                <img src="assets/images/projects/system-info/system_info.png" alt="System Info Output"
-                                    loading="lazy" decoding="async">
-                            </div>
-                            <div>
-                                <p>CPU Analysis</p>
-                                <img src="assets/images/projects/system-info/cpu_info.png" alt="CPU Info Output"
-                                    loading="lazy" decoding="async">
-                            </div>
-                        </div>
-
-                        <div class="project-links">
-                            <a href="https://github.com/amitpadhan525/linux-bash-scripts/tree/main/system-info"
-                                target="_blank" rel="noopener" class="link-btn link-btn-outline">View Code</a>
-                        </div>
-                    </div>
-                </article>
-            </div>
-        </section>
-    </main>
-
-    <footer class="site-footer">
-        <div class="container">
-            <p>&copy; 2026 Amit Padhan. All rights reserved.</p>
-            <nav aria-label="Social links" class="social-links">
-                <a href="https://github.com/amitpadhan525" target="_blank" rel="noopener" aria-label="GitHub">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                        fill="currentColor">
-                        <path
-                            d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
-                    </svg>
-                </a>
-                <a href="https://linkedin.com/in/amit-padhan" target="_blank" rel="noopener" aria-label="LinkedIn">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                        fill="currentColor">
-                        <path
-                            d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
-                    </svg>
-                </a>
-                <a href="https://instagram.com/a_m_i_t_01234" target="_blank" rel="noopener" aria-label="Instagram">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                        fill="currentColor">
-                        <path
-                            d="M7.8,2H16.2C19.4,2 22,4.6 22,7.8V16.2A5.8,5.8 0 0,1 16.2,22H7.8C4.6,22 2,19.4 2,16.2V7.8A5.8,5.8 0 0,1 7.8,2M7.6,4A3.6,3.6 0 0,0 4,7.6V16.4C4,18.39 5.61,20 7.6,20H16.4A3.6,3.6 0 0,0 20,16.4V7.6C20,5.61 18.39,4 16.4,4H7.6M17.25,5.5A1.25,1.25 0 0,1 18.5,6.75A1.25,1.25 0 0,1 17.25,8A1.25,1.25 0 0,1 16,6.75A1.25,1.25 0 0,1 17.25,5.5M12,7A5,5 0 0,1 17,12A5,5 0 0,1 12,17A5,5 0 0,1 7,12A5,5 0 0,1 12,7M12,9A3,3 0 0,0 9,12A3,3 0 0,0 12,15A3,3 0 0,0 15,12A3,3 0 0,0 12,9Z" />
-                    </svg>
-                </a>
-            </nav>
-        </div>
-    </footer>
-
-    <!-- Modal -->
-    <div id="project-modal" class="modal-overlay">
-        <div class="modal-content glass">
-            <button class="modal-close" aria-label="Close modal">&times;</button>
-            <div class="modal-header">
-                <h3 class="modal-title">Project Details</h3>
-            </div>
-            <div class="modal-body">
-                <div class="modal-body-content"></div>
-            </div>
-        </div>
+<main>
+  <section class="container fade-in">
+    <div class="section-title">
+      <span>My Code</span>
+      <h1>Projects</h1>
     </div>
 
-    <script src="assets/js/theme.js" defer></script>
-    <script src="assets/js/main.js" defer></script>
-</body>
+    <!-- Filter Buttons -->
+    <div class="project-filters" role="group" aria-label="Filter projects by category">
+      <button class="filter-btn active" data-filter="all">All</button>
+      <button class="filter-btn" data-filter="python">Python</button>
+      <button class="filter-btn" data-filter="bash">Bash</button>
+      <button class="filter-btn" data-filter="web">Web</button>
+      <button class="filter-btn" data-filter="security">Security</button>
+    </div>
 
+    <div class="projects-grid" id="projects-grid">
+
+      <!-- Project 1: Portfolio Website -->
+      <article class="project-card reveal" data-category="web">
+        <div class="project-card-top">
+          <span class="project-icon">🌐</span>
+          <div class="project-meta-tags">
+            <span class="tech-tag">HTML5</span>
+            <span class="tech-tag">CSS3</span>
+            <span class="tech-tag">JavaScript</span>
+          </div>
+        </div>
+        <div class="project-content">
+          <h3>Portfolio Website</h3>
+          <p>Personal portfolio with a glassmorphism dark design, split-hero layout, interactive terminal, rotating typewriter effect, and full mobile responsiveness.</p>
+        </div>
+        <div class="card-details" style="display:none;">
+          <p>Built entirely from scratch without frameworks. Features glassmorphism UI, dark/light modes, scroll reveal animations, and an interactive fake terminal.</p>
+          <h4>Key Features:</h4>
+          <ul>
+            <li><strong>Glassmorphism UI</strong> — Translucent card designs with backdrop filters.</li>
+            <li><strong>Dark Mode</strong> — Persistent theme toggle saved to localStorage.</li>
+            <li><strong>Interactive Terminal</strong> — Fake shell that responds to commands.</li>
+            <li><strong>Animations</strong> — Scroll-reveal using Intersection Observer.</li>
+          </ul>
+        </div>
+        <div class="project-links">
+          <a href="https://github.com/amitpadhan525/amitpadhan525.github.io" target="_blank" rel="noopener" class="link-btn link-btn-outline">View Code</a>
+          <a href="index.html" class="link-btn link-btn-fill">Live Demo</a>
+        </div>
+      </article>
+
+      <!-- Project 2: System Info Script -->
+      <article class="project-card reveal reveal-delay-1" data-category="bash">
+        <div class="project-card-top">
+          <span class="project-icon">🖥️</span>
+          <div class="project-meta-tags">
+            <span class="tech-tag">Bash</span>
+            <span class="tech-tag">Linux</span>
+            <span class="tech-tag">CLI</span>
+          </div>
+        </div>
+        <div class="project-content">
+          <h3>System Info Script</h3>
+          <p>Lightweight Bash script that displays OS details, CPU, RAM, GPU, network status, and uptime in a colorful terminal dashboard.</p>
+        </div>
+        <div class="card-details" style="display:none;">
+          <p>A collection of Linux Bash scripts for system administration and monitoring. Provides quick diagnostics for hardware and software.</p>
+          <h4>Included Scripts:</h4>
+          <ul>
+            <li><strong>system_info_colorfull.sh</strong> — Dashboard with colors for all hardware info.</li>
+            <li><strong>system_info.sh</strong> — Plain-text version for logging.</li>
+            <li><strong>CPU_info_colorfull.sh</strong> — Detailed CPU analysis.</li>
+          </ul>
+        </div>
+        <div class="project-links">
+          <a href="https://github.com/amitpadhan525/linux-bash-scripts/tree/main/system-info" target="_blank" rel="noopener" class="link-btn link-btn-fill">View Code</a>
+        </div>
+      </article>
+
+      <!-- Project 3: Port Scanner -->
+      <article class="project-card reveal reveal-delay-2" data-category="python security">
+        <div class="project-card-top">
+          <span class="project-icon">🔍</span>
+          <div class="project-meta-tags">
+            <span class="tech-tag">Python</span>
+            <span class="tech-tag">Networking</span>
+            <span class="tech-tag">Security</span>
+          </div>
+        </div>
+        <div class="project-content">
+          <h3>Port Scanner</h3>
+          <p>Multithreaded Python port scanner that detects open ports, grabs service banners, and outputs clean formatted reports — built for recon during CTFs.</p>
+        </div>
+        <div class="card-details" style="display:none;">
+          <p>A fast, threaded port scanner built for use during CTF reconnaissance phases. Supports banner grabbing and custom port ranges.</p>
+          <h4>Key Features:</h4>
+          <ul>
+            <li><strong>Multithreading</strong> — Scans hundreds of ports simultaneously.</li>
+            <li><strong>Banner Grabbing</strong> — Identifies running services.</li>
+            <li><strong>Clean Output</strong> — Formatted results with color coding.</li>
+          </ul>
+        </div>
+        <div class="project-links">
+          <a href="https://github.com/amitpadhan525" target="_blank" rel="noopener" class="link-btn link-btn-fill">GitHub →</a>
+        </div>
+      </article>
+
+      <!-- Project 4: Web Vuln Scanner -->
+      <article class="project-card reveal reveal-delay-3" data-category="python security">
+        <div class="project-card-top">
+          <span class="project-icon">🕸️</span>
+          <div class="project-meta-tags">
+            <span class="tech-tag">Python</span>
+            <span class="tech-tag">Web Security</span>
+            <span class="tech-tag">OWASP</span>
+          </div>
+        </div>
+        <div class="project-content">
+          <h3>Web Vuln Scanner</h3>
+          <p>Automated scanner for OWASP Top 10 vulnerabilities — XSS, SQL Injection, directory traversal, and open redirect detection on target URLs.</p>
+        </div>
+        <div class="card-details" style="display:none;">
+          <p>A Python-based web application vulnerability scanner inspired by the OWASP Top 10 checklist.</p>
+          <h4>Tests For:</h4>
+          <ul>
+            <li><strong>XSS</strong> — Reflected and stored cross-site scripting.</li>
+            <li><strong>SQLi</strong> — SQL injection in query parameters.</li>
+            <li><strong>Directory Traversal</strong> — Path-based file leaks.</li>
+          </ul>
+        </div>
+        <div class="project-links">
+          <a href="https://github.com/amitpadhan525" target="_blank" rel="noopener" class="link-btn link-btn-fill">GitHub →</a>
+        </div>
+      </article>
+
+      <!-- Project 5: Dotfiles -->
+      <article class="project-card reveal" data-category="bash">
+        <div class="project-card-top">
+          <span class="project-icon">🐧</span>
+          <div class="project-meta-tags">
+            <span class="tech-tag">Bash</span>
+            <span class="tech-tag">Arch Linux</span>
+            <span class="tech-tag">Hyprland</span>
+          </div>
+        </div>
+        <div class="project-content">
+          <h3>Dotfiles</h3>
+          <p>My personal Arch Linux + Hyprland configuration suite — Waybar, Rofi, Kitty, Hyprpaper and more, with an automated installer script.</p>
+        </div>
+        <div class="card-details" style="display:none;">
+          <p>Complete dotfiles for a Hyprland-based Arch Linux setup, managed with Git and deployed via a Bash installer.</p>
+          <h4>Includes:</h4>
+          <ul>
+            <li><strong>Hyprland</strong> — Wayland compositor config.</li>
+            <li><strong>Waybar</strong> — Status bar with custom modules.</li>
+            <li><strong>Rofi</strong> — Application launcher themes.</li>
+            <li><strong>install.sh</strong> — One-command deployment.</li>
+          </ul>
+        </div>
+        <div class="project-links">
+          <a href="https://github.com/amitpadhan525" target="_blank" rel="noopener" class="link-btn link-btn-fill">GitHub →</a>
+        </div>
+      </article>
+
+      <!-- Project 6: AI Virtual Assistant -->
+      <article class="project-card reveal reveal-delay-1" data-category="python">
+        <div class="project-card-top">
+          <span class="project-icon">🤖</span>
+          <div class="project-meta-tags">
+            <span class="tech-tag">Python</span>
+            <span class="tech-tag">AI</span>
+            <span class="tech-tag">Encrypted Keys</span>
+          </div>
+        </div>
+        <div class="project-content">
+          <h3>AI Virtual Assistant</h3>
+          <p>A Python-based virtual assistant with encrypted key storage, voice integration, and a modular plugin architecture for automating tasks.</p>
+        </div>
+        <div class="card-details" style="display:none;">
+          <p>Built as a personal automation tool, this assistant integrates AI APIs with Python and uses AES-encrypted key storage for secure API access.</p>
+          <h4>Features:</h4>
+          <ul>
+            <li><strong>Encrypted Keys</strong> — Secure API key storage.</li>
+            <li><strong>Modular</strong> — Plugin-based skill system.</li>
+            <li><strong>Voice Support</strong> — Speech recognition integration.</li>
+          </ul>
+        </div>
+        <div class="project-links">
+          <a href="https://github.com/amitpadhan525" target="_blank" rel="noopener" class="link-btn link-btn-fill">GitHub →</a>
+        </div>
+      </article>
+
+    </div>
+  </section>
+</main>
+
+<!-- Modal -->
+<div id="project-modal" class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="modal-title-text">
+  <div class="modal-content glass">
+    <button class="modal-close" aria-label="Close modal">&times;</button>
+    <div class="modal-header">
+      <h3 class="modal-title" id="modal-title-text">Project Details</h3>
+    </div>
+    <div class="modal-body">
+      <div class="modal-body-content"></div>
+    </div>
+  </div>
+</div>
+
+<footer class="site-footer">
+  <div class="container">
+    <p class="footer-cta">Like what you see? Let's build something together.</p>
+    <a href="contact.html" class="btn btn-outline footer-contact-btn">Get In Touch →</a>
+    <div class="footer-divider"></div>
+    <nav aria-label="Social links" class="social-links">
+      <a href="https://github.com/amitpadhan525" target="_blank" rel="noopener" aria-label="GitHub">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+      </a>
+      <a href="https://linkedin.com/in/amit-padhan" target="_blank" rel="noopener" aria-label="LinkedIn">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+      </a>
+      <a href="https://instagram.com/a_m_i_t_01234" target="_blank" rel="noopener" aria-label="Instagram">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M7.8,2H16.2C19.4,2 22,4.6 22,7.8V16.2A5.8,5.8 0 0,1 16.2,22H7.8C4.6,22 2,19.4 2,16.2V7.8A5.8,5.8 0 0,1 7.8,2M7.6,4A3.6,3.6 0 0,0 4,7.6V16.4C4,18.39 5.61,20 7.6,20H16.4A3.6,3.6 0 0,0 20,16.4V7.6C20,5.61 18.39,4 16.4,4H7.6M17.25,5.5A1.25,1.25 0 0,1 18.5,6.75A1.25,1.25 0 0,1 17.25,8A1.25,1.25 0 0,1 16,6.75A1.25,1.25 0 0,1 17.25,5.5M12,7A5,5 0 0,1 17,12A5,5 0 0,1 12,17A5,5 0 0,1 7,12A5,5 0 0,1 12,7M12,9A3,3 0 0,0 9,12A3,3 0 0,0 12,15A3,3 0 0,0 15,12A3,3 0 0,0 12,9Z"/></svg>
+      </a>
+    </nav>
+    <p class="footer-copy">&copy; <span id="footer-year"></span> Amit Padhan. All rights reserved.</p>
+  </div>
+</footer>
+
+<button class="scroll-top-btn" aria-label="Back to top">↑</button>
+<script src="assets/js/theme.js" defer></script>
+<script src="assets/js/main.js" defer></script>
+</body>
 </html>
