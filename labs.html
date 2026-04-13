@@ -47,43 +47,42 @@
                     <div class="project-content">
                         <div class="lab-header">
                             <div>
-                                <span class="lab-platform lab-platform-htb">HackTheBox</span>
-                                <h3 class="lab-title">Machines Name: Legacy</h3>
+                                <span class="lab-platform" style="color:#00ff00;border-color:#00ff00;background:rgba(0,255,0,0.1)">OverTheWire</span>
+                                <h3 class="lab-title">Wargame: Bandit (Level 0 - 16)</h3>
                             </div>
-                            <span class="lab-difficulty lab-difficulty-easy">Easy</span>
+                            <span class="lab-difficulty lab-difficulty-fundamental">Fundamental</span>
                         </div>
                         <div class="lab-grid">
                             <div>
                                 <h4 class="lab-section-title">Objective</h4>
-                                <p>Gain root privileges on a Windows machine by exploiting a vulnerability in the SMB
-                                    protocol.</p>
+                                <p>Learn fundamental Linux command line skills and basic cybersecurity concepts by solving increasingly difficult challenges.</p>
                             </div>
                             <div>
                                 <h4 class="lab-section-title">Tools Used</h4>
                                 <div class="lab-tools">
-                                    <span class="lab-tool-tag">Nmap</span>
-                                    <span class="lab-tool-tag">Metasploit</span>
-                                    <span class="lab-tool-tag">Searchsploit</span>
+                                    <span class="lab-tool-tag">SSH</span>
+                                    <span class="lab-tool-tag">Bash</span>
+                                    <span class="lab-tool-tag">grep</span>
+                                    <span class="lab-tool-tag">tar/gzip</span>
                                 </div>
                             </div>
                             <div>
                                 <h4 class="lab-section-title">High-Level Steps</h4>
                                 <ol class="lab-steps">
-                                    <li>Reconnaissance using Nmap to identify open SMB ports (445).</li>
-                                    <li>Identified the target is vulnerable to MS08-067 (NetAPI).</li>
-                                    <li>Configured and launched the exploit using Metasploit Framework.</li>
-                                    <li>Obtained a meterpreter shell with system privileges.</li>
+                                    <li>Connected to the Bandit server via SSH on port 2220.</li>
+                                    <li>Navigated directories, handled hidden and uniquely named files.</li>
+                                    <li>Used filtering and decoding commands (grep, sort, uniq, base64) to extract passwords.</li>
+                                    <li>Successfully completed initial 16 levels, demonstrating strong Linux CLI proficiency.</li>
                                 </ol>
                             </div>
                             <div>
                                 <h4 class="lab-section-title">Key Learning</h4>
-                                <p class="lab-learning">"Older Windows systems are often vulnerable to classic SMB
-                                    exploits. Always patch legacy systems."</p>
+                                <p class="lab-learning">"Mastering the Linux command line is crucial. Everything is a file, and knowing how to search, read, and manipulate them is the basis of security."</p>
                             </div>
                         </div>
                         <div class="lab-footer">
-                            <a href="https://github.com/amitpadhan525" target="_blank" rel="noopener"
-                                class="lab-link">Read Full Writeup →</a>
+                            <a href="https://overthewire.org/wargames/bandit/" target="_blank" rel="noopener"
+                                class="lab-link">View OverTheWire →</a>
                         </div>
                     </div>
                 </article>
