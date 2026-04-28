@@ -3,7 +3,6 @@
    Design: Premium Dark | Purple-Blue Accent | Clean & Modern
    ============================================================ */
 
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap');
 
 /* ─── TOKENS ─────────────────────────────────────────────── */
 :root {
@@ -163,7 +162,7 @@ header .glass:hover {
   font-weight: 500;
   color: var(--clr-txt-muted);
   border-radius: var(--r-xl);
-  transition: all var(--dur-fast) var(--ease);
+  transition: background var(--dur-fast) var(--ease), color var(--dur-fast) var(--ease), border-color var(--dur-fast) var(--ease), transform var(--dur-fast) var(--ease), opacity var(--dur-fast) var(--ease), box-shadow var(--dur-fast) var(--ease);
   letter-spacing: .01em;
 }
 
@@ -188,7 +187,7 @@ header .glass:hover {
   border-radius: 50%;
   width: 32px; height: 32px;
   display: flex; align-items:center; justify-content:center;
-  transition: all var(--dur-med) var(--ease);
+  transition: background var(--dur-med) var(--ease), color var(--dur-med) var(--ease), border-color var(--dur-med) var(--ease), transform var(--dur-med) var(--ease), opacity var(--dur-med) var(--ease), box-shadow var(--dur-med) var(--ease);
   flex-shrink: 0;
 }
 #theme-toggle:hover {
@@ -346,7 +345,7 @@ main {
   background: rgba(139,92,246,.08);
   border: 1px solid rgba(139,92,246,.18);
   color: var(--clr-primary-lt);
-  transition: all var(--dur-fast) var(--ease);
+  transition: background var(--dur-fast) var(--ease), color var(--dur-fast) var(--ease), border-color var(--dur-fast) var(--ease), transform var(--dur-fast) var(--ease), opacity var(--dur-fast) var(--ease), box-shadow var(--dur-fast) var(--ease);
 }
 
 .skill-tag:hover {
@@ -372,7 +371,7 @@ main {
   font-size: .9rem;
   font-family: var(--f-body);
   border: none;
-  transition: all var(--dur-med) var(--ease);
+  transition: background var(--dur-med) var(--ease), color var(--dur-med) var(--ease), border-color var(--dur-med) var(--ease), transform var(--dur-med) var(--ease), opacity var(--dur-med) var(--ease), box-shadow var(--dur-med) var(--ease);
   letter-spacing: .01em;
   position: relative;
   overflow: hidden;
@@ -672,7 +671,7 @@ section { padding: 5rem 0; }
   border: 1px solid var(--clr-border);
   border-radius: var(--r-lg);
   overflow: hidden;
-  transition: all var(--dur-med) var(--ease);
+  transition: background var(--dur-med) var(--ease), color var(--dur-med) var(--ease), border-color var(--dur-med) var(--ease), transform var(--dur-med) var(--ease), opacity var(--dur-med) var(--ease), box-shadow var(--dur-med) var(--ease);
 }
 .project-card:hover {
   transform: translateY(-6px);
@@ -722,7 +721,7 @@ section { padding: 5rem 0; }
   border: 1px solid rgba(139,92,246,.14);
   border-radius: var(--r-sm);
   color: var(--clr-primary-lt);
-  transition: all var(--dur-fast) var(--ease);
+  transition: background var(--dur-fast) var(--ease), color var(--dur-fast) var(--ease), border-color var(--dur-fast) var(--ease), transform var(--dur-fast) var(--ease), opacity var(--dur-fast) var(--ease), box-shadow var(--dur-fast) var(--ease);
 }
 .tech-tag:hover {
   background: rgba(139,92,246,.18);
@@ -737,7 +736,7 @@ section { padding: 5rem 0; }
   border-radius: var(--r-xl);
   font-size: .78rem;
   font-weight: 600;
-  transition: all var(--dur-fast) var(--ease);
+  transition: background var(--dur-fast) var(--ease), color var(--dur-fast) var(--ease), border-color var(--dur-fast) var(--ease), transform var(--dur-fast) var(--ease), opacity var(--dur-fast) var(--ease), box-shadow var(--dur-fast) var(--ease);
 }
 .link-btn-outline {
   border: 1px solid var(--clr-border);
@@ -772,7 +771,7 @@ section { padding: 5rem 0; }
   justify-content: center;
   opacity: 0;
   visibility: hidden;
-  transition: all var(--dur-med) var(--ease);
+  transition: background var(--dur-med) var(--ease), color var(--dur-med) var(--ease), border-color var(--dur-med) var(--ease), transform var(--dur-med) var(--ease), opacity var(--dur-med) var(--ease), box-shadow var(--dur-med) var(--ease);
 }
 .modal-overlay.active { opacity:1; visibility:visible; }
 
@@ -802,7 +801,7 @@ section { padding: 5rem 0; }
   width: 32px; height: 32px;
   border-radius: 50%;
   display: flex; align-items:center; justify-content:center;
-  transition: all var(--dur-fast) var(--ease);
+  transition: background var(--dur-fast) var(--ease), color var(--dur-fast) var(--ease), border-color var(--dur-fast) var(--ease), transform var(--dur-fast) var(--ease), opacity var(--dur-fast) var(--ease), box-shadow var(--dur-fast) var(--ease);
 }
 .modal-close:hover { background: rgba(139,92,246,.15); border-color:var(--clr-primary); }
 
