@@ -1,11 +1,8 @@
 # Portfolio Website
 
-This is the personal portfolio website for Amit, featuring:
-- Home
-- About Me
-- Projects
-- Cybersecurity Labs / Writeups
-- Contact
+Personal portfolio website for Amit Padhan.
+
+🌐 **Live Website:** [amitpadhan525.me](https://amitpadhan525.me) | [amitpadhan525.github.io](https://amitpadhan525.github.io)
 
 ## Structure
 - `index.html`: Landing page.
@@ -19,3 +16,4 @@ This is the personal portfolio website for Amit, featuring:
 - Modern Glassmorphism Design
 - Dark/Light Theme Toggle
 - Responsive Layout
+- Smooth Scrolling
