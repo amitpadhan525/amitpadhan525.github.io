@@ -307,6 +307,31 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
+    // ====== DOCK MAGNIFICATION (DESKTOP) ======
+    const dockNav = document.querySelector('.site-nav .nav-links');
+    if (dockNav && window.matchMedia('(hover: hover) and (min-width: 769px)').matches) {
+        const dockLinks = dockNav.querySelectorAll('a');
+        dockNav.addEventListener('mousemove', (e) => {
+            const mouseX = e.clientX;
+            dockLinks.forEach(item => {
+                const rect = item.getBoundingClientRect();
+                const center = rect.left + rect.width / 2;
+                const dist = Math.abs(mouseX - center);
+                if (dist < 90) {
+                    const scale = 1 + 0.12 * (1 - dist / 90);
+                    item.style.transform = `translateY(-3px) scale(${scale.toFixed(3)})`;
+                } else {
+                    item.style.transform = '';
+                }
+            });
+        });
+        dockNav.addEventListener('mouseleave', () => {
+            dockLinks.forEach(item => {
+                item.style.transform = '';
+            });
+        });
+    }
+
     // ====== SMOOTH PAGE TRANSITIONS ======
     document.querySelectorAll('a').forEach(link => {
         const href = link.getAttribute('href');
