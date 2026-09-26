@@ -372,13 +372,15 @@
         <div class="terminal-line fade-in-anim delay-6" style="margin-top:.5rem"><span class="terminal-prompt">amit@arch ~ $</span> <span class="terminal-cmd typing-anim delay-7">./run_exploit.sh --target=future</span></div>
         <div class="terminal-line terminal-output-text fade-in-anim delay-8" style="color:var(--clr-primary)">&gt; Access Granted. Initializing systems... [OK]</div>
 
+        <!-- Terminal responses history -->
+        <div id="terminal-responses"></div>
+
         <!-- Interactive input area -->
         <div class="terminal-line fade-in-anim delay-9" style="margin-top:.5rem" id="terminal-input-line">
           <span class="terminal-prompt">amit@arch ~ $</span>
           <input type="text" id="terminal-input" class="terminal-input-field" placeholder="type a command..." autocomplete="off" spellcheck="false" aria-label="Terminal input">
           <span class="terminal-cursor" id="terminal-cursor">▌</span>
         </div>
-        <div id="terminal-responses"></div>
       </div>
     </div>
     <p class="terminal-hint">💡 Try typing: <code>help</code>, <code>skills</code>, <code>contact</code>, <code>projects</code>, <code>clear</code></p>

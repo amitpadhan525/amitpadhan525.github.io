@@ -1,13 +1,14 @@
 document.addEventListener('DOMContentLoaded', () => {
     // ====== LENIS SMOOTH SCROLLING ======
+    let lenisInstance = null;
     if (typeof Lenis !== 'undefined') {
-        const lenis = new Lenis({
+        lenisInstance = new Lenis({
             duration: 1.2,
             easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t))
         });
 
         function raf(time) {
-            lenis.raf(time);
+            lenisInstance.raf(time);
             requestAnimationFrame(raf);
         }
         requestAnimationFrame(raf);
@@ -38,7 +39,11 @@ document.addEventListener('DOMContentLoaded', () => {
         document.body.appendChild(scrollTopBtn);
     }
     scrollTopBtn.addEventListener('click', () => {
-        window.scrollTo({ top: 0, behavior: 'smooth' });
+        if (lenisInstance) {
+            lenisInstance.scrollTo(0);
+        } else {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
     });
 
     // ====== MOBILE MENU ======
@@ -46,12 +51,14 @@ document.addEventListener('DOMContentLoaded', () => {
     const siteNav  = document.querySelector('.site-nav');
 
     if (mobileBtn && siteNav) {
-        mobileBtn.addEventListener('click', () => {
+        mobileBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
             siteNav.classList.toggle('active');
             const isActive = siteNav.classList.contains('active');
             mobileBtn.textContent = isActive ? '✕' : '☰';
             mobileBtn.setAttribute('aria-expanded', isActive);
         });
+
         siteNav.querySelectorAll('a').forEach(link => {
             link.addEventListener('click', () => {
                 siteNav.classList.remove('active');
@@ -59,7 +66,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 mobileBtn.setAttribute('aria-expanded', 'false');
             });
         });
-        document.addEventListener('click', (e) => {
+
+        const closeMobileNav = (e) => {
             if (siteNav.classList.contains('active') &&
                 !siteNav.contains(e.target) &&
                 !mobileBtn.contains(e.target)) {
@@ -67,7 +75,10 @@ document.addEventListener('DOMContentLoaded', () => {
                 mobileBtn.textContent = '☰';
                 mobileBtn.setAttribute('aria-expanded', 'false');
             }
-        });
+        };
+
+        document.addEventListener('click', closeMobileNav);
+        document.addEventListener('pointerdown', closeMobileNav);
     }
 
     // ====== HEADER SCROLL ======
@@ -75,7 +86,7 @@ document.addEventListener('DOMContentLoaded', () => {
     let ticking   = false;
 
     function onScroll() {
-        const scrollY   = window.scrollY;
+        const scrollY   = window.scrollY || window.pageYOffset;
         const docHeight = document.documentElement.scrollHeight - window.innerHeight;
         if (progressBar && docHeight > 0)
             progressBar.style.width = (scrollY / docHeight * 100) + '%';
@@ -92,9 +103,16 @@ document.addEventListener('DOMContentLoaded', () => {
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
             const href = this.getAttribute('href');
-            if (href === '#') return;
+            if (href === '#' || !href) return;
             const target = document.querySelector(href);
-            if (target) { e.preventDefault(); target.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
+            if (target) {
+                e.preventDefault();
+                if (lenisInstance) {
+                    lenisInstance.scrollTo(target);
+                } else {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            }
         });
     });
 
@@ -298,12 +316,18 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // ====== ACTIVE NAV ======
-    const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+    const currentPath = window.location.pathname.replace(/\/$/, '');
+    const currentFile = currentPath.split('/').pop() || 'index.html';
+    const cleanCurrent = currentFile.replace(/\.html$/, '');
+
     document.querySelectorAll('.nav-links a').forEach(link => {
-        link.classList.remove('active');
         const href = link.getAttribute('href');
-        if (href === currentPage || (currentPage === '' && href === 'index.html')) {
+        if (!href) return;
+        const cleanHref = href.replace(/\.html$/, '').replace(/^\//, '');
+        if (cleanHref === cleanCurrent || (cleanCurrent === '' && cleanHref === 'index') || (cleanCurrent === 'index' && cleanHref === 'index')) {
             link.classList.add('active');
+        } else {
+            link.classList.remove('active');
         }
     });
 
@@ -312,6 +336,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (dockNav && window.matchMedia('(hover: hover) and (min-width: 769px)').matches) {
         const dockLinks = dockNav.querySelectorAll('a');
         dockNav.addEventListener('mousemove', (e) => {
+            if (window.innerWidth <= 768) return;
             const mouseX = e.clientX;
             dockLinks.forEach(item => {
                 const rect = item.getBoundingClientRect();
@@ -332,11 +357,32 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // ====== SMOOTH PAGE TRANSITIONS ======
+    // ====== SMOOTH PAGE TRANSITIONS & BFCACHE ======
+    window.addEventListener('pageshow', () => {
+        document.body.style.opacity = '';
+        document.body.style.transform = '';
+    });
+
     document.querySelectorAll('a').forEach(link => {
         const href = link.getAttribute('href');
-        if (href && !href.startsWith('#') && !href.startsWith('http') && !href.startsWith('mailto:') && link.getAttribute('target') !== '_blank') {
+        if (
+            href &&
+            !href.startsWith('#') &&
+            !href.startsWith('http') &&
+            !href.startsWith('mailto:') &&
+            !href.startsWith('tel:') &&
+            !href.startsWith('javascript:') &&
+            link.getAttribute('target') !== '_blank' &&
+            !link.hasAttribute('download')
+        ) {
             link.addEventListener('click', (e) => {
+                // Allow middle-click, Ctrl+click, Cmd+click, Shift+click for new tabs
+                if (e.metaKey || e.ctrlKey || e.shiftKey || e.button !== 0) return;
+
+                // Don't animate if clicking link to current page
+                const linkFile = href.split('/').pop().replace(/\.html$/, '') || 'index';
+                if (linkFile === cleanCurrent) return;
+
                 e.preventDefault();
                 document.body.style.opacity    = '0';
                 document.body.style.transform  = 'translateY(8px)';

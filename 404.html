@@ -93,29 +93,14 @@
   </div>
 </footer>
 
+<script src="assets/js/main.js" defer></script>
 <script>
   // Show the attempted path — strip local file:// prefix, show only the page name
   const pathEl = document.getElementById('nf-path');
   if (pathEl) {
     const raw = window.location.pathname;
-    // Show only the last segment (e.g. /blog or /unknown)
     const segment = raw.replace(/.*\/([^/]*)$/, '/$1');
     pathEl.textContent = segment === '/404.html' ? '/???' : segment;
-  }
-  // Footer year
-  const fy = document.getElementById('footer-year');
-  if (fy) fy.textContent = new Date().getFullYear();
-  // Theme toggle
-  const tt = document.getElementById('theme-toggle');
-  const html = document.documentElement;
-  if (tt) {
-    tt.textContent = html.getAttribute('data-theme') === 'dark' ? '☀️' : '🌙';
-    tt.addEventListener('click', () => {
-      const next = html.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
-      html.setAttribute('data-theme', next);
-      localStorage.setItem('theme', next);
-      tt.textContent = next === 'dark' ? '☀️' : '🌙';
-    });
   }
 </script>
 </body>
