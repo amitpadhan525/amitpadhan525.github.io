@@ -227,7 +227,7 @@ document.addEventListener('DOMContentLoaded', () => {
         skills: `🔐  Cybersecurity  — OWASP Top 10 · Privilege Escalation · CTFs\n🛠️  Tools          — Nmap · Burp Suite · Metasploit · Wireshark\n💻  Languages      — Python · Bash · HTML/CSS/JS · C/C++\n🖥️  Platforms      — Kali Linux · Arch Linux · Docker · VMs`,
         projects: `📦  Port Scanner       — multithreaded Python recon tool\n🕸️  Web Vuln Scanner  — OWASP Top 10 automated scanner\n🐧  Dotfiles          — Arch Linux + Hyprland config suite\n→  See more: projects.html`,
         contact: `📧  Use the contact form   : contact.html\n🐙  GitHub              : github.com/amitpadhan525\n💼  LinkedIn            : linkedin.com/in/amit-padhan\n📸  Instagram           : instagram.com/a_m_i_t_01234`,
-        thm: `🏴  TryHackMe Profile: amitpadhan525\n★  Rooms Completed : 50+\n🎖️  Badges Earned   : 30+\n🏆  Total Points    : 5000+\n→  tryhackme.com/p/amitpadhan525`,
+        thm: `🏴  TryHackMe Profile: amitpadhan525\n★  Rooms Completed : 70+\n🎖️  Badges Earned   : 30+\n🏆  Total Points    : 5000+\n→  tryhackme.com/p/amitpadhan525`,
         ls: `drwxr-xr-x  projects/\ndrwxr-xr-x  labs/\ndrwxr-xr-x  dotfiles/\n-rw-r--r--  resume.pdf\n-rw-r--r--  README.md`,
         pwd: `/home/amit/portfolio`,
         clear: '__CLEAR__',
