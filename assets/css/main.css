@@ -611,6 +611,7 @@ section { padding: 5rem 0; }
   border-radius: var(--r-xl);
   margin-bottom: .65rem;
 }
+.section-title h1,
 .section-title h2 {
   font-size: clamp(1.6rem, 3.5vw, 2.1rem);
   font-weight: 700;
@@ -1681,11 +1682,12 @@ section { padding: 5rem 0; }
 
 /* ─── ABOUT PROFILE CARD ───────────────────────────────────── */
 .about-profile-card {
+  max-width: 880px;
+  margin: 0 auto 2rem;
   display: flex;
   align-items: center;
   gap: 2rem;
   padding: 2rem;
-  margin-bottom: 2rem;
 }
 .about-profile-pic {
   flex-shrink: 0;
@@ -1707,8 +1709,8 @@ section { padding: 5rem 0; }
   font-size: .9rem;
   line-height: 1.7;
 }
-@media (max-width: 600px) {
-  .about-profile-card { flex-direction: column; text-align: center; }
+@media (max-width: 768px) {
+  .about-profile-card { flex-direction: column; text-align: center; gap: 1.25rem; padding: 1.5rem; }
   .about-quote { text-align: left; }
 }
 
@@ -1726,9 +1728,12 @@ section { padding: 5rem 0; }
   min-width: 260px;
   border: 1px solid var(--clr-border);
 }
+@media (max-width: 600px) {
+  .github-stat-img { min-width: 100%; }
+}
 
 /* ─── ABOUT SECTION SPACING ────────────────────────────────── */
-.about-section { padding: .5rem 0; }
+.about-section { padding: .25rem 0; }
 .about-section > h3 {
   position: relative;
   padding-left: 1rem;
@@ -1742,7 +1747,6 @@ section { padding: 5rem 0; }
   background: var(--grd-accent);
   border-radius: 2px;
 }
-.about-section + .about-section { margin-top: 2.5rem; }
 
 /* Snapshot tags */
 .snapshot-tags { display: flex; flex-wrap: wrap; gap: .6rem; margin-top: 1rem; }
