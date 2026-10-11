@@ -48,9 +48,12 @@
         margin: 0;
         opacity: 0;
         visibility: hidden;
-        transform: translateY(-8px) scale(0.95);
+        transform: translate3d(0, -8px, 0) scale(0.95);
         transform-origin: top right;
-        transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+        will-change: transform, opacity, visibility;
+        transition: opacity 0.22s cubic-bezier(0.16, 1, 0.3, 1),
+                    visibility 0.22s cubic-bezier(0.16, 1, 0.3, 1),
+                    transform 0.22s cubic-bezier(0.16, 1, 0.3, 1);
         z-index: 999;
         pointer-events: none;
     }
@@ -78,7 +81,7 @@
     .site-nav.active {
         opacity: 1;
         visibility: visible;
-        transform: translateY(0) scale(1);
+        transform: translate3d(0, 0, 0) scale(1);
         pointer-events: auto;
     }
 

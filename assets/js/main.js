@@ -1,10 +1,19 @@
 document.addEventListener('DOMContentLoaded', () => {
     // ====== LENIS SMOOTH SCROLLING ======
     let lenisInstance = null;
-    if (typeof Lenis !== 'undefined') {
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    if (typeof Lenis !== 'undefined' && !prefersReducedMotion) {
         lenisInstance = new Lenis({
-            duration: 1.2,
-            easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t))
+            duration: 1.15,
+            easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+            direction: 'vertical',
+            gestureDirection: 'vertical',
+            smooth: true,
+            mouseMultiplier: 1.0,
+            smoothTouch: false,
+            touchMultiplier: 1.5,
+            infinite: false
         });
 
         function raf(time) {
@@ -40,7 +49,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     scrollTopBtn.addEventListener('click', () => {
         if (lenisInstance) {
-            lenisInstance.scrollTo(0);
+            lenisInstance.scrollTo(0, { duration: 1.2 });
         } else {
             window.scrollTo({ top: 0, behavior: 'smooth' });
         }
@@ -81,23 +90,38 @@ document.addEventListener('DOMContentLoaded', () => {
         document.addEventListener('pointerdown', closeMobileNav);
     }
 
-    // ====== HEADER SCROLL ======
+    // ====== HEADER SCROLL & PROGRESS ======
     const header = document.querySelector('header');
     let ticking   = false;
 
-    function onScroll() {
-        const scrollY   = window.scrollY || window.pageYOffset;
+    function updateScrollState(scrollY) {
         const docHeight = document.documentElement.scrollHeight - window.innerHeight;
-        if (progressBar && docHeight > 0)
+        if (progressBar && docHeight > 0) {
             progressBar.style.width = (scrollY / docHeight * 100) + '%';
-        if (header) header.classList.toggle('scrolled', scrollY > 50);
-        if (scrollTopBtn) scrollTopBtn.classList.toggle('visible', scrollY > 400);
-        ticking = false;
+        }
+        if (header) header.classList.toggle('scrolled', scrollY > 40);
+        if (scrollTopBtn) scrollTopBtn.classList.toggle('visible', scrollY > 350);
     }
 
-    window.addEventListener('scroll', () => {
-        if (!ticking) { requestAnimationFrame(onScroll); ticking = true; }
-    }, { passive: true });
+    if (lenisInstance) {
+        lenisInstance.on('scroll', (e) => {
+            updateScrollState(e.scroll);
+        });
+    } else {
+        window.addEventListener('scroll', () => {
+            if (!ticking) {
+                requestAnimationFrame(() => {
+                    const scrollY = window.scrollY || window.pageYOffset;
+                    updateScrollState(scrollY);
+                    ticking = false;
+                });
+                ticking = true;
+            }
+        }, { passive: true });
+    }
+
+    // Run initial scroll update
+    updateScrollState(window.scrollY || window.pageYOffset || 0);
 
     // ====== SMOOTH ANCHOR SCROLLING ======
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -108,7 +132,7 @@ document.addEventListener('DOMContentLoaded', () => {
             if (target) {
                 e.preventDefault();
                 if (lenisInstance) {
-                    lenisInstance.scrollTo(target);
+                    lenisInstance.scrollTo(target, { offset: -70, duration: 1.1 });
                 } else {
                     target.scrollIntoView({ behavior: 'smooth', block: 'start' });
                 }
@@ -135,15 +159,28 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // ====== ANIMATED STAT COUNTERS (global & THM) ======
+    // ====== ANIMATED STAT COUNTERS (RAF with easeOutExpo) ======
     function animateCount(el, target, suffix = '+') {
-        let current = 0;
-        const increment = Math.max(1, Math.floor(target / 40));
-        const timer = setInterval(() => {
-            current += increment;
-            if (current >= target) { current = target; clearInterval(timer); }
+        const duration = 1400; // ms
+        const startTime = performance.now();
+
+        function step(now) {
+            const elapsed = now - startTime;
+            const progress = Math.min(1, elapsed / duration);
+            // Ease out cubic
+            const easeOut = 1 - Math.pow(1 - progress, 3);
+            const current = Math.floor(easeOut * target);
+
             el.textContent = current.toLocaleString() + suffix;
-        }, 40);
+
+            if (progress < 1) {
+                requestAnimationFrame(step);
+            } else {
+                el.textContent = target.toLocaleString() + suffix;
+            }
+        }
+
+        requestAnimationFrame(step);
     }
 
     const statObserver = new IntersectionObserver((entries) => {
@@ -151,11 +188,11 @@ document.addEventListener('DOMContentLoaded', () => {
             if (entry.isIntersecting) {
                 const el = entry.target;
                 const target = parseInt(el.dataset.target, 10);
-                animateCount(el, target);
+                if (!isNaN(target)) animateCount(el, target);
                 statObserver.unobserve(el);
             }
         });
-    }, { threshold: 0.5 });
+    }, { threshold: 0.3 });
 
     document.querySelectorAll('.stat-number, .thm-stat-num').forEach(el => statObserver.observe(el));
 
@@ -282,12 +319,32 @@ document.addEventListener('DOMContentLoaded', () => {
         terminalBody && terminalBody.addEventListener('click', () => terminalInput.focus());
     }
 
-    // ====== SPOTLIGHT CARDS ======
-    document.querySelectorAll('.spotlight-card').forEach(card => {
+    // ====== SPOTLIGHT CARDS (RAF Throttled) ======
+    const spotlightCards = document.querySelectorAll('.spotlight-card');
+    spotlightCards.forEach(card => {
+        let cardRect = null;
+        let mouseX = 0, mouseY = 0;
+        let isCardUpdating = false;
+
+        function updateSpotlight() {
+            if (cardRect) {
+                card.style.setProperty('--mouse-x', `${mouseX - cardRect.left}px`);
+                card.style.setProperty('--mouse-y', `${mouseY - cardRect.top}px`);
+            }
+            isCardUpdating = false;
+        }
+
+        card.addEventListener('mouseenter', () => {
+            cardRect = card.getBoundingClientRect();
+        });
+
         card.addEventListener('mousemove', (e) => {
-            const rect = card.getBoundingClientRect();
-            card.style.setProperty('--mouse-x', (e.clientX - rect.left) + 'px');
-            card.style.setProperty('--mouse-y', (e.clientY - rect.top)  + 'px');
+            mouseX = e.clientX;
+            mouseY = e.clientY;
+            if (!isCardUpdating) {
+                isCardUpdating = true;
+                requestAnimationFrame(updateSpotlight);
+            }
         });
     });
 
@@ -338,37 +395,103 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // ====== DOCK MAGNIFICATION (DESKTOP) ======
+    // ====== DOCK MAGNIFICATION (DESKTOP RAF LERP SPRING) ======
     const dockNav = document.querySelector('.site-nav .nav-links');
     if (dockNav && window.matchMedia('(hover: hover) and (min-width: 769px)').matches) {
-        const dockLinks = dockNav.querySelectorAll('a');
-        dockNav.addEventListener('mousemove', (e) => {
-            if (window.innerWidth <= 768) return;
-            const mouseX = e.clientX;
-            dockLinks.forEach(item => {
-                const rect = item.getBoundingClientRect();
-                const center = rect.left + rect.width / 2;
-                const dist = Math.abs(mouseX - center);
-                if (dist < 90) {
-                    const scale = 1 + 0.12 * (1 - dist / 90);
-                    item.style.transform = `translateY(-3px) scale(${scale.toFixed(3)})`;
+        const dockLinks = Array.from(dockNav.querySelectorAll('a'));
+        let dockItemsData = [];
+        let isHoveringDock = false;
+        let cursorX = -9999;
+        let dockRafId = null;
+
+        function refreshDockBounds() {
+            dockItemsData = dockLinks.map(link => {
+                const rect = link.getBoundingClientRect();
+                return {
+                    el: link,
+                    center: rect.left + rect.width / 2,
+                    currentScale: 1,
+                    targetScale: 1
+                };
+            });
+        }
+
+        refreshDockBounds();
+        window.addEventListener('resize', refreshDockBounds);
+
+        function renderDock() {
+            let activeAnimation = false;
+
+            dockItemsData.forEach(item => {
+                if (isHoveringDock) {
+                    const dist = Math.abs(cursorX - item.center);
+                    if (dist < 85) {
+                        item.targetScale = 1 + 0.14 * (1 - dist / 85);
+                    } else {
+                        item.targetScale = 1;
+                    }
                 } else {
-                    item.style.transform = '';
+                    item.targetScale = 1;
+                }
+
+                // Smooth spring-like lerp
+                const diff = item.targetScale - item.currentScale;
+                if (Math.abs(diff) > 0.002) {
+                    item.currentScale += diff * 0.22;
+                    activeAnimation = true;
+                } else {
+                    item.currentScale = item.targetScale;
+                }
+
+                if (Math.abs(item.currentScale - 1) > 0.002) {
+                    const translateY = -2.5 * (item.currentScale - 1) / 0.14;
+                    item.el.style.transform = `translate3d(0, ${translateY.toFixed(2)}px, 0) scale(${item.currentScale.toFixed(3)})`;
+                } else {
+                    item.el.style.transform = '';
                 }
             });
+
+            if (isHoveringDock || activeAnimation) {
+                dockRafId = requestAnimationFrame(renderDock);
+            } else {
+                dockRafId = null;
+            }
+        }
+
+        dockNav.addEventListener('mouseenter', () => {
+            isHoveringDock = true;
+            refreshDockBounds();
+            if (!dockRafId) dockRafId = requestAnimationFrame(renderDock);
         });
+
+        dockNav.addEventListener('mousemove', (e) => {
+            cursorX = e.clientX;
+            if (!dockRafId) dockRafId = requestAnimationFrame(renderDock);
+        });
+
         dockNav.addEventListener('mouseleave', () => {
-            dockLinks.forEach(item => {
-                item.style.transform = '';
-            });
+            isHoveringDock = false;
+            cursorX = -9999;
+            if (!dockRafId) dockRafId = requestAnimationFrame(renderDock);
         });
     }
 
-    // ====== SMOOTH PAGE TRANSITIONS & BFCACHE ======
+    // ====== SMOOTH PAGE TRANSITIONS & PREFETCH ======
     window.addEventListener('pageshow', () => {
         document.body.style.opacity = '';
         document.body.style.transform = '';
     });
+
+    // Prefetch internal pages on hover for instant response
+    const prefetchedUrls = new Set();
+    function prefetchUrl(url) {
+        if (!url || prefetchedUrls.has(url)) return;
+        prefetchedUrls.add(url);
+        const linkEl = document.createElement('link');
+        linkEl.rel = 'prefetch';
+        linkEl.href = url;
+        document.head.appendChild(linkEl);
+    }
 
     document.querySelectorAll('a').forEach(link => {
         const href = link.getAttribute('href');
@@ -382,19 +505,21 @@ document.addEventListener('DOMContentLoaded', () => {
             link.getAttribute('target') !== '_blank' &&
             !link.hasAttribute('download')
         ) {
+            // Hover prefetch
+            link.addEventListener('mouseenter', () => prefetchUrl(href), { passive: true });
+            link.addEventListener('focus', () => prefetchUrl(href), { passive: true });
+
             link.addEventListener('click', (e) => {
-                // Allow middle-click, Ctrl+click, Cmd+click, Shift+click for new tabs
                 if (e.metaKey || e.ctrlKey || e.shiftKey || e.button !== 0) return;
 
-                // Don't animate if clicking link to current page
                 const linkFile = href.split('/').pop().replace(/\.html$/, '') || 'index';
                 if (linkFile === cleanCurrent) return;
 
                 e.preventDefault();
                 document.body.style.opacity    = '0';
-                document.body.style.transform  = 'translateY(8px)';
-                document.body.style.transition = 'opacity .25s ease, transform .25s ease';
-                setTimeout(() => { window.location.href = href; }, 250);
+                document.body.style.transform  = 'translate3d(0, 6px, 0)';
+                document.body.style.transition = 'opacity .22s cubic-bezier(0.4, 0, 0.2, 1), transform .22s cubic-bezier(0.4, 0, 0.2, 1)';
+                setTimeout(() => { window.location.href = href; }, 220);
             });
         }
     });
