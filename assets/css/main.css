@@ -1954,6 +1954,158 @@ a.contact-info-value:hover { opacity: .8; }
   .not-found-code { font-size: 5rem; }
 }
 
+/* ─── HERO QUICK STATS ─────────────────────────────────────── */
+.hero-quick-stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.85rem;
+  padding: 1rem 1.25rem;
+  background: rgba(17, 28, 45, 0.65);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(0, 229, 255, 0.18);
+  border-radius: var(--r-md);
+  margin-top: 0.35rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+}
+.hero-quick-stats .stat-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+.hero-quick-stats .stat-val {
+  font-family: var(--f-mono);
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: var(--clr-primary);
+  line-height: 1.2;
+}
+.hero-quick-stats .stat-lbl {
+  font-size: 0.72rem;
+  color: var(--clr-txt-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-top: 0.25rem;
+}
+@media (max-width: 600px) {
+  .hero-quick-stats {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.85rem;
+  }
+}
+
+/* ─── ACHIEVEMENTS SHOWCASE ────────────────────────────────── */
+.achievements-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+  gap: 1.25rem;
+  margin-top: 1.5rem;
+}
+.achievement-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 1.75rem 1.25rem 1.35rem;
+  position: relative;
+  border-radius: var(--r-md);
+  transition: transform var(--dur-med) var(--ease), border-color var(--dur-med) var(--ease), box-shadow var(--dur-med) var(--ease);
+}
+.achievement-card:hover {
+  transform: translateY(-5px);
+  border-color: var(--clr-border-hi);
+  box-shadow: var(--sh-glow);
+}
+.achievement-icon-wrap {
+  width: 76px;
+  height: 76px;
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+.achievement-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  filter: drop-shadow(0 4px 12px rgba(0, 229, 255, 0.2));
+  transition: transform var(--dur-med) var(--ease);
+}
+.achievement-card:hover .achievement-img {
+  transform: scale(1.08) rotate(3deg);
+}
+.achievement-badge-pill {
+  position: absolute;
+  top: 0.75rem;
+  right: 0.75rem;
+  font-family: var(--f-mono);
+  font-size: 0.65rem;
+  font-weight: 700;
+  padding: 0.15rem 0.5rem;
+  border-radius: var(--r-xl);
+  background: rgba(0, 229, 255, 0.15);
+  color: var(--clr-primary);
+  border: 1px solid rgba(0, 229, 255, 0.3);
+}
+.achievement-badge-pill.bronze {
+  background: rgba(245, 158, 11, 0.15);
+  color: #f59e0b;
+  border-color: rgba(245, 158, 11, 0.35);
+}
+.achievement-badge-pill.gold {
+  background: rgba(234, 179, 8, 0.15);
+  color: #eab308;
+  border-color: rgba(234, 179, 8, 0.35);
+}
+.achievement-name {
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--clr-txt);
+  margin-bottom: 0.35rem;
+}
+.achievement-desc {
+  font-size: 0.8rem;
+  color: var(--clr-txt-muted);
+  line-height: 1.45;
+  margin-bottom: 0.85rem;
+}
+.achievement-meta {
+  font-family: var(--f-mono);
+  font-size: 0.7rem;
+  color: var(--clr-txt-dim);
+  margin-top: auto;
+}
+
+/* ─── TERMINAL NEOFETCH ────────────────────────────────────── */
+.terminal-neofetch {
+  display: flex;
+  gap: 1.5rem;
+  margin: 0.5rem 0;
+  font-family: var(--f-mono);
+  font-size: 0.78rem;
+  line-height: 1.35;
+  flex-wrap: wrap;
+}
+.neofetch-ascii {
+  color: var(--clr-primary);
+  white-space: pre;
+  font-weight: 700;
+}
+.neofetch-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+}
+.neofetch-key {
+  color: var(--clr-primary);
+  font-weight: 600;
+}
+.neofetch-val {
+  color: var(--clr-txt);
+}
+
 /* ─── KEYBOARD FOCUS ACCESSIBILITY ─────────────────────────── */
 :focus-visible {
   outline: 2px solid var(--clr-primary);

@@ -194,7 +194,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }, { threshold: 0.3 });
 
-    document.querySelectorAll('.stat-number, .thm-stat-num').forEach(el => statObserver.observe(el));
+    document.querySelectorAll('.stat-number, .thm-stat-num, .hero-quick-stats .stat-val').forEach(el => statObserver.observe(el));
 
     // ====== PROGRESS BAR ANIMATION ======
     const progressObserver = new IntersectionObserver((entries) => {
@@ -259,13 +259,24 @@ document.addEventListener('DOMContentLoaded', () => {
     const terminalBody    = document.getElementById('terminal-output');
 
     const COMMANDS = {
-        help: `Available commands:\n  help       — show this list\n  whoami     — about me\n  skills     — list my skills\n  projects   — featured projects\n  contact    — how to reach me\n  thm        — TryHackMe stats\n  clear      — clear terminal\n  ls         — list directory\n  pwd        — print working directory`,
-        whoami: `😎  Amit Padhan\n    Role   : Cybersecurity Enthusiast & Python Developer\n    OS     : Arch Linux + Hyprland (Wayland)\n    Mission: Mastering Web Exploitation & Ethical Hacking`,
+        help: `Available commands:\n  help         — show this list\n  neofetch     — display system info & Arch ASCII\n  whoami       — about me\n  skills       — list my skills\n  projects     — featured projects\n  repos        — list active GitHub repositories\n  achievements — GitHub profile achievements\n  thm          — TryHackMe stats\n  contact      — how to reach me\n  clear        — clear terminal\n  ls           — list directory\n  pwd          — print working directory`,
+        whoami: `😎  Amit Padhan\n    Role   : Cybersecurity Enthusiast & Linux Power User\n    OS     : Arch Linux + Hyprland (Wayland)\n    Mission: Mastering Web Exploitation, Linux Internals & Automation`,
+        neofetch: `<div class="terminal-neofetch"><pre class="neofetch-ascii">
+       /\\
+      /  \\
+     /\\   \\
+    /      \\
+   /   ,,   \\
+  /   |  |  -\\
+ /_-''    ''-_\\
+</pre><div class="neofetch-info"><div><span class="neofetch-key">amit</span>@<span class="neofetch-key">archlinux</span></div><div>-----------------</div><div><span class="neofetch-key">OS:</span> <span class="neofetch-val">Arch Linux x86_64</span></div><div><span class="neofetch-key">Host:</span> <span class="neofetch-val">Linux Station</span></div><div><span class="neofetch-key">Kernel:</span> <span class="neofetch-val">6.11.3-arch1-1</span></div><div><span class="neofetch-key">Uptime:</span> <span class="neofetch-val">1337 hours</span></div><div><span class="neofetch-key">Shell:</span> <span class="neofetch-val">zsh 5.9</span></div><div><span class="neofetch-key">WM:</span> <span class="neofetch-val">Hyprland (Wayland)</span></div><div><span class="neofetch-key">Terminal:</span> <span class="neofetch-val">Kitty</span></div><div><span class="neofetch-key">Editor:</span> <span class="neofetch-val">Neovim (NvChad)</span></div><div><span class="neofetch-key">Theme:</span> <span class="neofetch-val">Cyber Cyan / TokyoNight</span></div></div></div>`,
+        achievements: `🏆  GitHub Achievements:\n  🦈  Pull Shark (Bronze x2)   — 26+ merged PRs across open source\n  🧠  Galaxy Brain             — Accepted solutions in GitHub Discussions\n  ⭐  Starstruck               — 35+ total stars (sddm-themes & linux-dotfiles)\n  ⚡  Quickdraw                — Issue/PR closed under 5 mins\n  🚀  YOLO                     — Merged pull request without code review\n→  github.com/amitpadhan525?tab=achievements`,
+        repos: `🐙  Featured Open Source Repositories:\n  🎨  sddm-themes          [19★] — Modern SDDM login themes & AUR recipe\n  ⚙️   linux-dotfiles       [16★] — Modular Hyprland, Waybar & Kitty configs\n  👁️   linux-eye             [2★] — Real-time Linux system telemetry daemon\n  🛠️   scripts                     — Linux automation, inotify & diagnostic tools\n  🔐  cybersecurity-labs    [1★] — CTF writeups, THM & Bandit notes\n  ⚡  browser-stress-test         — Real-time device benchmarking tool\n→  See all: github.com/amitpadhan525`,
         skills: `🔐  Cybersecurity  — OWASP Top 10 · Privilege Escalation · CTFs\n🛠️  Tools          — Nmap · Burp Suite · Metasploit · Wireshark\n💻  Languages      — Python · Bash · HTML/CSS/JS · C/C++\n🖥️  Platforms      — Kali Linux · Arch Linux · Docker · VMs`,
-        projects: `📦  Port Scanner       — multithreaded Python recon tool\n🕸️  Web Vuln Scanner  — OWASP Top 10 automated scanner\n🐧  Dotfiles          — Arch Linux + Hyprland config suite\n→  See more: projects.html`,
+        projects: `🎨  sddm-themes          — clean SDDM themes with AUR package [19★]\n⚙️   linux-dotfiles       — Hyprland/Waybar/Kitty modular desktop [16★]\n👁️   linux-eye            — system event & telemetry monitoring daemon\n🛠️   scripts              — Linux automation & diagnostic audit suite\n→  See more: projects.html`,
         contact: `📧  Use the contact form   : contact.html\n🐙  GitHub              : github.com/amitpadhan525\n💼  LinkedIn            : linkedin.com/in/amit-padhan\n📸  Instagram           : instagram.com/a_m_i_t_01234`,
         thm: `🏴  TryHackMe Profile: amitpadhan525\n★  Rooms Completed : 70+\n🎖️  Badges Earned   : 30+\n🏆  Total Points    : 5000+\n→  tryhackme.com/p/amitpadhan525`,
-        ls: `drwxr-xr-x  projects/\ndrwxr-xr-x  labs/\ndrwxr-xr-x  dotfiles/\n-rw-r--r--  resume.pdf\n-rw-r--r--  README.md`,
+        ls: `drwxr-xr-x  projects/\ndrwxr-xr-x  labs/\ndrwxr-xr-x  sddm-themes/\ndrwxr-xr-x  linux-dotfiles/\n-rw-r--r--  resume.pdf\n-rw-r--r--  README.md`,
         pwd: `/home/amit/portfolio`,
         clear: '__CLEAR__',
     };
@@ -366,7 +377,8 @@ document.addEventListener('DOMContentLoaded', () => {
         document.querySelectorAll('.project-card').forEach(card => {
             card.style.cursor = 'pointer';
             card.addEventListener('click', (e) => {
-                if (e.target.closest('a') || e.target.closest('button')) return;
+                if (e.target.closest('a')) return;
+                if (e.target.closest('button') && !e.target.closest('.project-modal-trigger')) return;
                 const details = card.querySelector('.card-details');
                 const title   = card.querySelector('h3')?.textContent || 'Project';
                 if (details && modalTitle && modalBody) {

@@ -55,8 +55,216 @@
 
     <div class="projects-grid" id="projects-grid">
 
-      <!-- Project 1: Portfolio Website -->
-      <article class="project-card reveal" data-category="web">
+      <!-- Project 1: SDDM Themes Suite -->
+      <article class="project-card reveal" data-category="bash web">
+        <div class="project-card-top">
+          <span class="project-icon">🎨</span>
+          <div class="project-meta-tags">
+            <span class="tech-tag">QML</span>
+            <span class="tech-tag">Arch Linux</span>
+            <span class="tech-tag">AUR</span>
+            <span class="tech-tag">19★</span>
+          </div>
+        </div>
+        <div class="project-content">
+          <h3>sddm-themes</h3>
+          <p>Clean, minimal, modern login themes designed for Simple Desktop Display Manager (SDDM). Packaged for the Arch User Repository (AUR) with automated nested preview runner.</p>
+        </div>
+        <div class="card-details" style="display:none;">
+          <p>A flagship open-source project delivering elegant, responsive greeter themes for Linux desktop environments running SDDM.</p>
+          <h4>Key Highlights:</h4>
+          <ul>
+            <li><strong>AUR Packaging</strong> — Available directly on the Arch User Repository with PKGBUILD recipes.</li>
+            <li><strong>Automated Testing</strong> — Includes an interactive nested SDDM preview runner for real-time testing.</li>
+            <li><strong>Asset Validation</strong> — Automated scripts verifying integrity and high-DPI scaling across resolutions.</li>
+            <li><strong>Community Recognition</strong> — 19+ GitHub stars and active user adoption on Arch Linux.</li>
+          </ul>
+        </div>
+        <div class="project-links">
+          <a href="https://github.com/amitpadhan525/sddm-themes" target="_blank" rel="noopener" class="link-btn link-btn-fill">GitHub (19★) →</a>
+          <button class="link-btn link-btn-outline project-modal-trigger">Details</button>
+        </div>
+      </article>
+
+      <!-- Project 2: Modular Linux Dotfiles -->
+      <article class="project-card reveal reveal-delay-1" data-category="bash">
+        <div class="project-card-top">
+          <span class="project-icon">⚙️</span>
+          <div class="project-meta-tags">
+            <span class="tech-tag">Hyprland</span>
+            <span class="tech-tag">Waybar</span>
+            <span class="tech-tag">Kitty</span>
+            <span class="tech-tag">16★</span>
+          </div>
+        </div>
+        <div class="project-content">
+          <h3>linux-dotfiles</h3>
+          <p>Modular, high-performance desktop configuration suite for Hyprland/Wayland, Waybar, Kitty, and Neovim on Arch Linux with an automated installer.</p>
+        </div>
+        <div class="card-details" style="display:none;">
+          <p>Complete configuration framework providing an ultra-responsive, beautiful Wayland workspace optimized for developers and security analysts.</p>
+          <h4>Configuration Stack:</h4>
+          <ul>
+            <li><strong>Hyprland &amp; Waybar</strong> — Smooth animations, custom battery/memory/audio telemetry widgets.</li>
+            <li><strong>Kitty &amp; Neovim</strong> — TokyoNight / Cyber Cyan color palettes, fast startup, LSP configuration.</li>
+            <li><strong>Automated Installer</strong> — Shell script handling symlinks, dependency installation, and font setups.</li>
+            <li><strong>Community Impact</strong> — 16+ GitHub stars from the Linux customization community.</li>
+          </ul>
+        </div>
+        <div class="project-links">
+          <a href="https://github.com/amitpadhan525/linux-dotfiles" target="_blank" rel="noopener" class="link-btn link-btn-fill">GitHub (16★) →</a>
+          <button class="link-btn link-btn-outline project-modal-trigger">Details</button>
+        </div>
+      </article>
+
+      <!-- Project 3: Linux Eye Telemetry Daemon -->
+      <article class="project-card reveal reveal-delay-2" data-category="python security">
+        <div class="project-card-top">
+          <span class="project-icon">👁️</span>
+          <div class="project-meta-tags">
+            <span class="tech-tag">Python</span>
+            <span class="tech-tag">Linux Internals</span>
+            <span class="tech-tag">Security</span>
+          </div>
+        </div>
+        <div class="project-content">
+          <h3>linux-eye</h3>
+          <p>Real-time Linux system monitoring daemon capturing process lifecycles, memory thresholds, and exporting structured CSV event summaries.</p>
+        </div>
+        <div class="card-details" style="display:none;">
+          <p>A specialized Linux telemetry tool tailored for lightweight monitoring of servers and local security research environments.</p>
+          <h4>Key Features:</h4>
+          <ul>
+            <li><strong>Process Auditing</strong> — Captures spawned tasks and resource-heavy executions.</li>
+            <li><strong>CSV Exporter</strong> — Structured event logging suitable for SIEM ingestion and analysis.</li>
+            <li><strong>Lightweight Daemon</strong> — Low CPU footprint designed to run non-intrusively in background.</li>
+          </ul>
+        </div>
+        <div class="project-links">
+          <a href="https://github.com/amitpadhan525/linux-eye" target="_blank" rel="noopener" class="link-btn link-btn-fill">GitHub →</a>
+          <button class="link-btn link-btn-outline project-modal-trigger">Details</button>
+        </div>
+      </article>
+
+      <!-- Project 4: Linux Scripts & Diagnostics Suite -->
+      <article class="project-card reveal reveal-delay-3" data-category="bash security">
+        <div class="project-card-top">
+          <span class="project-icon">🛠️</span>
+          <div class="project-meta-tags">
+            <span class="tech-tag">Bash</span>
+            <span class="tech-tag">inotify</span>
+            <span class="tech-tag">Diagnostics</span>
+          </div>
+        </div>
+        <div class="project-content">
+          <h3>scripts</h3>
+          <p>Modular Linux automation toolkit featuring memory diagnostic profilers, inotify burst handlers, network status checkers, and security audit utilities.</p>
+        </div>
+        <div class="card-details" style="display:none;">
+          <p>Production-grade POSIX and Bash tools developed for Linux system administration, storage benchmarking, and forensic diagnostics.</p>
+          <h4>Included Tools:</h4>
+          <ul>
+            <li><strong>system-info</strong> — Disk I/O throughput and latency benchmark tools.</li>
+            <li><strong>security</strong> — Automated Linux hardening audit utilities and permission scanners.</li>
+            <li><strong>inotify</strong> — Event burst queue handler for file modification monitoring.</li>
+            <li><strong>network</strong> — Active connection status analyzers and socket inspection.</li>
+          </ul>
+        </div>
+        <div class="project-links">
+          <a href="https://github.com/amitpadhan525/scripts" target="_blank" rel="noopener" class="link-btn link-btn-fill">GitHub →</a>
+          <button class="link-btn link-btn-outline project-modal-trigger">Details</button>
+        </div>
+      </article>
+
+      <!-- Project 5: Cybersecurity Labs & Research -->
+      <article class="project-card reveal" data-category="security">
+        <div class="project-card-top">
+          <span class="project-icon">🔐</span>
+          <div class="project-meta-tags">
+            <span class="tech-tag">CTF</span>
+            <span class="tech-tag">TryHackMe</span>
+            <span class="tech-tag">Bandit</span>
+          </div>
+        </div>
+        <div class="project-content">
+          <h3>cybersecurity-labs</h3>
+          <p>Hands-on lab repository documenting CTF solutions, OverTheWire Bandit levels 0-16, vulnerable machine exploit flows, and network analysis cheatsheets.</p>
+        </div>
+        <div class="card-details" style="display:none;">
+          <p>Comprehensive repository documenting offensive and defensive cybersecurity findings, methodology notes, and lab steps.</p>
+          <h4>Contents:</h4>
+          <ul>
+            <li><strong>OverTheWire Bandit</strong> — Documented level progression for Linux privilege escalation and commands.</li>
+            <li><strong>TryHackMe Walkthroughs</strong> — Nmap, Burp Suite, Metasploitable2, and web exploitation paths.</li>
+            <li><strong>Cheatsheets</strong> — Practical network recon and command injection quick references.</li>
+          </ul>
+        </div>
+        <div class="project-links">
+          <a href="https://github.com/amitpadhan525/cybersecurity-labs" target="_blank" rel="noopener" class="link-btn link-btn-fill">GitHub →</a>
+          <a href="labs.html" class="link-btn link-btn-outline">Labs Page</a>
+        </div>
+      </article>
+
+      <!-- Project 6: Browser Speed & Stress Benchmark -->
+      <article class="project-card reveal reveal-delay-1" data-category="web">
+        <div class="project-card-top">
+          <span class="project-icon">⚡</span>
+          <div class="project-meta-tags">
+            <span class="tech-tag">JavaScript</span>
+            <span class="tech-tag">Canvas</span>
+            <span class="tech-tag">Telemetry</span>
+          </div>
+        </div>
+        <div class="project-content">
+          <h3>browser-stress-test</h3>
+          <p>Interactive web-based benchmarking suite measuring device speed, canvas render stability, real-time FPS jitter, and memory heap delta.</p>
+        </div>
+        <div class="card-details" style="display:none;">
+          <p>Engineered to stress-test browser rendering pipelines and compute capacity across phones, laptops, and PCs with zero installation.</p>
+          <h4>Features:</h4>
+          <ul>
+            <li><strong>Real-time Telemetry</strong> — Measures frame drops, heap usage delta, and render loop latency.</li>
+            <li><strong>Canvas Benchmark</strong> — Heavy 2D particle simulation pushing CPU/GPU rasterization.</li>
+            <li><strong>Zero Dependencies</strong> — Pure vanilla JS implementation for maximum accuracy.</li>
+          </ul>
+        </div>
+        <div class="project-links">
+          <a href="https://github.com/amitpadhan979/browser-stress-test" target="_blank" rel="noopener" class="link-btn link-btn-fill">GitHub →</a>
+          <button class="link-btn link-btn-outline project-modal-trigger">Details</button>
+        </div>
+      </article>
+
+      <!-- Project 7: ERP Auto-Login Automation -->
+      <article class="project-card reveal reveal-delay-2" data-category="python security">
+        <div class="project-card-top">
+          <span class="project-icon">🤖</span>
+          <div class="project-meta-tags">
+            <span class="tech-tag">Python</span>
+            <span class="tech-tag">Automation</span>
+            <span class="tech-tag">Selenium</span>
+          </div>
+        </div>
+        <div class="project-content">
+          <h3>erp-autologin</h3>
+          <p>Headless browser automation script streamlining multi-step institutional portal authentication with session handling and secure credential passing.</p>
+        </div>
+        <div class="card-details" style="display:none;">
+          <p>A productivity and automation tool designed to eliminate repetitive web login workflows on institutional portals.</p>
+          <h4>Features:</h4>
+          <ul>
+            <li><strong>Headless Mode</strong> — Seamless background execution without GUI browser popups.</li>
+            <li><strong>Secure Credential Handling</strong> — Reads credentials from environment or encrypted stores.</li>
+            <li><strong>Robust Error Recovery</strong> — Handles portal timeouts, captcha prompts, and session keep-alive.</li>
+          </ul>
+        </div>
+        <div class="project-links">
+          <a href="https://github.com/amitpadhan525/erp-autologin" target="_blank" rel="noopener" class="link-btn link-btn-fill">GitHub →</a>
+          <button class="link-btn link-btn-outline project-modal-trigger">Details</button>
+        </div>
+      </article>
+
+      <!-- Project 8: Portfolio Website -->
+      <article class="project-card reveal reveal-delay-3" data-category="web">
         <div class="project-card-top">
           <span class="project-icon">🌐</span>
           <div class="project-meta-tags">
@@ -66,163 +274,22 @@
           </div>
         </div>
         <div class="project-content">
-          <h3>Portfolio Website</h3>
-          <p>Personal portfolio with a glassmorphism dark design, split-hero layout, interactive terminal, rotating typewriter effect, and full mobile responsiveness.</p>
+          <h3>amitpadhan525.github.io</h3>
+          <p>Personal portfolio featuring modern glassmorphism styling, interactive terminal emulator, GitHub achievements showcase, and Lenis smooth scrolling.</p>
         </div>
         <div class="card-details" style="display:none;">
-          <p>Built entirely from scratch without frameworks. Features glassmorphism UI, dark/light modes, scroll reveal animations, and an interactive fake terminal.</p>
-          <h4>Key Features:</h4>
+          <p>Crafted completely from scratch with pure HTML, CSS, and modern JavaScript with zero bulky frameworks.</p>
+          <h4>Design &amp; Architecture:</h4>
           <ul>
-            <li><strong>Glassmorphism UI</strong> — Translucent card designs with backdrop filters.</li>
-            <li><strong>Dark Mode</strong> — Persistent theme toggle saved to localStorage.</li>
-            <li><strong>Interactive Terminal</strong> — Fake shell that responds to commands.</li>
-            <li><strong>Animations</strong> — Scroll-reveal using Intersection Observer.</li>
+            <li><strong>Glassmorphism UI</strong> — Midnight navy backdrop with Cyber Cyan glowing accents.</li>
+            <li><strong>Interactive Terminal</strong> — Built-in shell supporting neofetch, repos, achievements, and commands.</li>
+            <li><strong>Smooth Performance</strong> — Lenis inertia scrolling with requestAnimationFrame throttling.</li>
+            <li><strong>Accessibility &amp; SEO</strong> — Semantic HTML5 structure, dark/light toggle, and responsive layout.</li>
           </ul>
         </div>
         <div class="project-links">
-          <a href="https://github.com/amitpadhan525/amitpadhan525.github.io" target="_blank" rel="noopener" class="link-btn link-btn-outline">View Code</a>
-          <a href="index.html" class="link-btn link-btn-fill">Live Demo</a>
-        </div>
-      </article>
-
-      <!-- Project 2: System Info Script -->
-      <article class="project-card reveal reveal-delay-1" data-category="bash">
-        <div class="project-card-top">
-          <span class="project-icon">🖥️</span>
-          <div class="project-meta-tags">
-            <span class="tech-tag">Bash</span>
-            <span class="tech-tag">Linux</span>
-            <span class="tech-tag">CLI</span>
-          </div>
-        </div>
-        <div class="project-content">
-          <h3>System Info Script</h3>
-          <p>Lightweight Bash script that displays OS details, CPU, RAM, GPU, network status, and uptime in a colorful terminal dashboard.</p>
-        </div>
-        <div class="card-details" style="display:none;">
-          <p>A collection of Linux Bash scripts for system administration and monitoring. Provides quick diagnostics for hardware and software.</p>
-          <h4>Included Scripts:</h4>
-          <ul>
-            <li><strong>system_info_colorfull.sh</strong> — Dashboard with colors for all hardware info.</li>
-            <li><strong>system_info.sh</strong> — Plain-text version for logging.</li>
-            <li><strong>CPU_info_colorfull.sh</strong> — Detailed CPU analysis.</li>
-          </ul>
-        </div>
-        <div class="project-links">
-          <a href="https://github.com/amitpadhan525/linux-bash-scripts/tree/main/system-info" target="_blank" rel="noopener" class="link-btn link-btn-fill">View Code</a>
-        </div>
-      </article>
-
-      <!-- Project 3: Port Scanner -->
-      <article class="project-card reveal reveal-delay-2" data-category="python security">
-        <div class="project-card-top">
-          <span class="project-icon">🔍</span>
-          <div class="project-meta-tags">
-            <span class="tech-tag">Python</span>
-            <span class="tech-tag">Networking</span>
-            <span class="tech-tag">Security</span>
-          </div>
-        </div>
-        <div class="project-content">
-          <h3>Port Scanner</h3>
-          <p>Multithreaded Python port scanner that detects open ports, grabs service banners, and outputs clean formatted reports — built for recon during CTFs.</p>
-        </div>
-        <div class="card-details" style="display:none;">
-          <p>A fast, threaded port scanner built for use during CTF reconnaissance phases. Supports banner grabbing and custom port ranges.</p>
-          <h4>Key Features:</h4>
-          <ul>
-            <li><strong>Multithreading</strong> — Scans hundreds of ports simultaneously.</li>
-            <li><strong>Banner Grabbing</strong> — Identifies running services.</li>
-            <li><strong>Clean Output</strong> — Formatted results with color coding.</li>
-          </ul>
-        </div>
-        <div class="project-links">
-          <a href="https://github.com/amitpadhan525" target="_blank" rel="noopener" class="link-btn link-btn-fill">GitHub →</a>
-        </div>
-      </article>
-
-      <!-- Project 4: Web Vuln Scanner -->
-      <article class="project-card reveal reveal-delay-3" data-category="python security">
-        <div class="project-card-top">
-          <span class="project-icon">🕸️</span>
-          <div class="project-meta-tags">
-            <span class="tech-tag">Python</span>
-            <span class="tech-tag">Web Security</span>
-            <span class="tech-tag">OWASP</span>
-          </div>
-        </div>
-        <div class="project-content">
-          <h3>Web Vuln Scanner</h3>
-          <p>Automated scanner for OWASP Top 10 vulnerabilities — XSS, SQL Injection, directory traversal, and open redirect detection on target URLs.</p>
-        </div>
-        <div class="card-details" style="display:none;">
-          <p>A Python-based web application vulnerability scanner inspired by the OWASP Top 10 checklist.</p>
-          <h4>Tests For:</h4>
-          <ul>
-            <li><strong>XSS</strong> — Reflected and stored cross-site scripting.</li>
-            <li><strong>SQLi</strong> — SQL injection in query parameters.</li>
-            <li><strong>Directory Traversal</strong> — Path-based file leaks.</li>
-          </ul>
-        </div>
-        <div class="project-links">
-          <a href="https://github.com/amitpadhan525" target="_blank" rel="noopener" class="link-btn link-btn-fill">GitHub →</a>
-        </div>
-      </article>
-
-      <!-- Project 5: Dotfiles -->
-      <article class="project-card reveal" data-category="bash">
-        <div class="project-card-top">
-          <span class="project-icon">🐧</span>
-          <div class="project-meta-tags">
-            <span class="tech-tag">Bash</span>
-            <span class="tech-tag">Arch Linux</span>
-            <span class="tech-tag">Hyprland</span>
-          </div>
-        </div>
-        <div class="project-content">
-          <h3>Dotfiles</h3>
-          <p>My personal Arch Linux + Hyprland configuration suite — Waybar, Rofi, Kitty, Hyprpaper and more, with an automated installer script.</p>
-        </div>
-        <div class="card-details" style="display:none;">
-          <p>Complete dotfiles for a Hyprland-based Arch Linux setup, managed with Git and deployed via a Bash installer.</p>
-          <h4>Includes:</h4>
-          <ul>
-            <li><strong>Hyprland</strong> — Wayland compositor config.</li>
-            <li><strong>Waybar</strong> — Status bar with custom modules.</li>
-            <li><strong>Rofi</strong> — Application launcher themes.</li>
-            <li><strong>install.sh</strong> — One-command deployment.</li>
-          </ul>
-        </div>
-        <div class="project-links">
-          <a href="https://github.com/amitpadhan525" target="_blank" rel="noopener" class="link-btn link-btn-fill">GitHub →</a>
-        </div>
-      </article>
-
-      <!-- Project 6: AI Virtual Assistant -->
-      <article class="project-card reveal reveal-delay-1" data-category="python">
-        <div class="project-card-top">
-          <span class="project-icon">🤖</span>
-          <div class="project-meta-tags">
-            <span class="tech-tag">Python</span>
-            <span class="tech-tag">AI</span>
-            <span class="tech-tag">Encrypted Keys</span>
-          </div>
-        </div>
-        <div class="project-content">
-          <h3>AI Virtual Assistant</h3>
-          <p>A Python-based virtual assistant with encrypted key storage, voice integration, and a modular plugin architecture for automating tasks.</p>
-        </div>
-        <div class="card-details" style="display:none;">
-          <p>Built as a personal automation tool, this assistant integrates AI APIs with Python and uses AES-encrypted key storage for secure API access.</p>
-          <h4>Features:</h4>
-          <ul>
-            <li><strong>Encrypted Keys</strong> — Secure API key storage.</li>
-            <li><strong>Modular</strong> — Plugin-based skill system.</li>
-            <li><strong>Voice Support</strong> — Speech recognition integration.</li>
-          </ul>
-        </div>
-        <div class="project-links">
-          <a href="https://github.com/amitpadhan525" target="_blank" rel="noopener" class="link-btn link-btn-fill">GitHub →</a>
+          <a href="https://github.com/amitpadhan525/amitpadhan525.github.io" target="_blank" rel="noopener" class="link-btn link-btn-fill">GitHub →</a>
+          <a href="index.html" class="link-btn link-btn-outline">Home Page</a>
         </div>
       </article>
 
