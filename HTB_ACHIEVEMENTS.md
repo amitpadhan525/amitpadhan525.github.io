@@ -11,7 +11,7 @@ Verified HackTheBox machine completions, Sherlocks, and CTF challenges solved by
 - **Achievement Link:** [https://labs.hackthebox.com/achievement/machine/2337402/394](https://labs.hackthebox.com/achievement/machine/2337402/394)
 - **Preview:**
 
-[![Meow Achievement Preview](https://labs.hackthebox.com/achievement/machine/preview/2337402/394.png)](https://labs.hackthebox.com/achievement/machine/2337402/394)
+[![Meow Achievement Preview](assets/images/htb/meow.png)](https://labs.hackthebox.com/achievement/machine/2337402/394)
 
 ---
 
@@ -20,7 +20,7 @@ Verified HackTheBox machine completions, Sherlocks, and CTF challenges solved by
 - **Achievement Link:** [https://labs.hackthebox.com/achievement/machine/2337402/393](https://labs.hackthebox.com/achievement/machine/2337402/393)
 - **Preview:**
 
-[![Fawn Achievement Preview](https://labs.hackthebox.com/achievement/machine/preview/2337402/393.png)](https://labs.hackthebox.com/achievement/machine/2337402/393)
+[![Fawn Achievement Preview](assets/images/htb/fawn.png)](https://labs.hackthebox.com/achievement/machine/2337402/393)
 
 ---
 
@@ -29,7 +29,7 @@ Verified HackTheBox machine completions, Sherlocks, and CTF challenges solved by
 - **Achievement Link:** [https://labs.hackthebox.com/achievement/machine/2337402/395](https://labs.hackthebox.com/achievement/machine/2337402/395)
 - **Preview:**
 
-[![Dancing Achievement Preview](https://labs.hackthebox.com/achievement/machine/preview/2337402/395.png)](https://labs.hackthebox.com/achievement/machine/2337402/395)
+[![Dancing Achievement Preview](assets/images/htb/dancing.png)](https://labs.hackthebox.com/achievement/machine/2337402/395)
 
 ---
 
@@ -38,7 +38,7 @@ Verified HackTheBox machine completions, Sherlocks, and CTF challenges solved by
 - **Achievement Link:** [https://labs.hackthebox.com/achievement/machine/2337402/472](https://labs.hackthebox.com/achievement/machine/2337402/472)
 - **Preview:**
 
-[![Redeemer Achievement Preview](https://labs.hackthebox.com/achievement/machine/preview/2337402/472.png)](https://labs.hackthebox.com/achievement/machine/2337402/472)
+[![Redeemer Achievement Preview](assets/images/htb/redeemer.png)](https://labs.hackthebox.com/achievement/machine/2337402/472)
 
 ---
 
@@ -49,7 +49,7 @@ Verified HackTheBox machine completions, Sherlocks, and CTF challenges solved by
 - **Achievement Link:** [https://labs.hackthebox.com/achievement/machine/2337402/351](https://labs.hackthebox.com/achievement/machine/2337402/351)
 - **Preview:**
 
-[![Cap Achievement Preview](https://labs.hackthebox.com/achievement/machine/preview/2337402/351.png)](https://labs.hackthebox.com/achievement/machine/2337402/351)
+[![Cap Achievement Preview](assets/images/htb/cap.png)](https://labs.hackthebox.com/achievement/machine/2337402/351)
 
 ---
 
@@ -60,7 +60,7 @@ Verified HackTheBox machine completions, Sherlocks, and CTF challenges solved by
 - **Achievement Link:** [https://labs.hackthebox.com/achievement/sherlock/2337402/631](https://labs.hackthebox.com/achievement/sherlock/2337402/631)
 - **Preview:**
 
-[![Brutus Sherlock Preview](https://labs.hackthebox.com/achievement/sherlock/preview/2337402/631.png)](https://labs.hackthebox.com/achievement/sherlock/2337402/631)
+[![Brutus Sherlock Preview](assets/images/htb/brutus.png)](https://labs.hackthebox.com/achievement/sherlock/2337402/631)
 
 ---
 
@@ -69,7 +69,7 @@ Verified HackTheBox machine completions, Sherlocks, and CTF challenges solved by
 - **Achievement Link:** [https://labs.hackthebox.com/achievement/sherlock/2337402/1947](https://labs.hackthebox.com/achievement/sherlock/2337402/1947)
 - **Preview:**
 
-[![SSHole Sherlock Preview](https://labs.hackthebox.com/achievement/sherlock/preview/2337402/1947.png)](https://labs.hackthebox.com/achievement/sherlock/2337402/1947)
+[![SSHole Sherlock Preview](assets/images/htb/sshole.png)](https://labs.hackthebox.com/achievement/sherlock/2337402/1947)
 
 ---
 
@@ -80,7 +80,7 @@ Verified HackTheBox machine completions, Sherlocks, and CTF challenges solved by
 - **Achievement Link:** [https://labs.hackthebox.com/achievement/challenge/2337402/806](https://labs.hackthebox.com/achievement/challenge/2337402/806)
 - **Preview:**
 
-[![SpookyPass Challenge Preview](https://labs.hackthebox.com/achievement/challenge/preview/2337402/806.png)](https://labs.hackthebox.com/achievement/challenge/2337402/806)
+[![SpookyPass Challenge Preview](assets/images/htb/spookypass.png)](https://labs.hackthebox.com/achievement/challenge/2337402/806)
 
 ---
 
@@ -89,4 +89,4 @@ Verified HackTheBox machine completions, Sherlocks, and CTF challenges solved by
 - **Achievement Link:** [https://labs.hackthebox.com/achievement/challenge/2337402/646](https://labs.hackthebox.com/achievement/challenge/2337402/646)
 - **Preview:**
 
-[![Flag Command Challenge Preview](https://labs.hackthebox.com/achievement/challenge/preview/2337402/646.png)](https://labs.hackthebox.com/achievement/challenge/2337402/646)
+[![Flag Command Challenge Preview](assets/images/htb/flag_command.png)](https://labs.hackthebox.com/achievement/challenge/2337402/646)
