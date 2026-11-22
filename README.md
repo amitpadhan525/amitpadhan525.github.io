@@ -8,7 +8,9 @@ Personal portfolio website for Amit Padhan.
 - `index.html`: Landing page.
 - `about.html`: Biographical information.
 - `projects.html`: Showcase of technical projects.
-- `labs.html`: Cybersecurity writeups and lab reports.
+- `labs.html`: Cybersecurity writeups, lab reports, and HackTheBox achievements.
+- `HTB_ACHIEVEMENTS.md`: Verified HackTheBox achievements (Starting Point, Machines, Sherlocks, Challenges) with previews.
+- `htb.txt`: Raw list of HackTheBox achievements.
 - `contact.html`: Contact form and details.
 - `assets/`: Contains CSS, JS, Images, and Icons.
 
